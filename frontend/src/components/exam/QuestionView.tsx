@@ -2,7 +2,7 @@ import { useExamStore } from '@/stores/examStore'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ChevronLeft, ChevronRight, Flag } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Flag, ExternalLink } from 'lucide-react'
 
 export default function QuestionView() {
   const currentExam = useExamStore((state) => state.currentExam)
@@ -62,6 +62,17 @@ export default function QuestionView() {
         <p className="whitespace-pre-wrap text-lg leading-relaxed">
           {question.text}
         </p>
+        {question.documentationLink && (
+          <a
+            href={question.documentationLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-primary hover:underline"
+          >
+            <ExternalLink className="h-4 w-4" />
+            View Documentation
+          </a>
+        )}
       </div>
 
       {/* Options */}

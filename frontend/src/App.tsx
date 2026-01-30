@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard'
 import ExamPage from './pages/ExamPage'
 import ResultsPage from './pages/ResultsPage'
 import Settings from './pages/Settings'
+import ManageTests from './pages/ManageTests'
 
 function App() {
   const loadTests = useExamStore((state) => state.loadTests)
@@ -27,6 +28,7 @@ function App() {
         <Route path="/exam/:testId/:mode" element={<ExamPage />} />
         <Route path="/results/:attemptId" element={<ResultsPage />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/manage-tests" element={<ManageTests />} />
       </Routes>
     </Router>
   )

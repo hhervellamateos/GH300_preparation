@@ -11,6 +11,7 @@ export type Question = {
   correctAnswers: string[]
   explanation: string
   isMultiSelect: boolean
+  documentationLink?: string
 }
 
 export type Test = {

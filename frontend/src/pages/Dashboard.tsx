@@ -17,6 +17,7 @@ import {
   Settings as SettingsIcon,
   Clock,
   CheckCircle,
+  FileEdit,
 } from 'lucide-react'
 import { formatDistanceToNow } from 'date-fns'
 import type { ExamMode } from '@/types'
@@ -63,14 +64,24 @@ export default function Dashboard() {
               GitHub Copilot Certification Preparation
             </p>
           </div>
-          <Button
-            variant="outline"
-            onClick={() => navigate('/settings')}
-            className="gap-2"
-          >
-            <SettingsIcon className="h-4 w-4" />
-            Settings
-          </Button>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              onClick={() => navigate('/manage-tests')}
+              className="gap-2"
+            >
+              <FileEdit className="h-4 w-4" />
+              Manage Tests
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => navigate('/settings')}
+              className="gap-2"
+            >
+              <SettingsIcon className="h-4 w-4" />
+              Settings
+            </Button>
+          </div>
         </div>
       </header>
 

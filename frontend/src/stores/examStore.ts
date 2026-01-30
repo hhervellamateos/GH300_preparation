@@ -32,6 +32,7 @@ interface ExamStore {
   saveProgress: () => void
   loadProgress: () => void
   clearExam: () => void
+  cancelExam: () => void
 }
 
 export const useExamStore = create<ExamStore>((set, get) => ({
@@ -338,6 +339,11 @@ export const useExamStore = create<ExamStore>((set, get) => ({
   },
 
   clearExam: () => {
+    set({ currentExam: null })
+    saveToLocalStorage('gh300_current_exam', null)
+  },
+
+  cancelExam: () => {
     set({ currentExam: null })
     saveToLocalStorage('gh300_current_exam', null)
   },
