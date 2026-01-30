@@ -55,7 +55,7 @@ export default function Sidebar() {
       </div>
 
       {/* Scrollable content */}
-      <div className="flex-1 overflow-y-auto p-6 pb-8 scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-300 dark:scrollbar-track-gray-900 dark:scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500">
+      <div className="scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-300 dark:scrollbar-track-gray-900 dark:scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500 flex-1 overflow-y-auto p-6 pb-8">
         {/* Legend */}
         <div className="mb-6 space-y-2 rounded-lg bg-gray-50 p-3 text-sm dark:bg-gray-900">
           <div className="flex items-center gap-2">
