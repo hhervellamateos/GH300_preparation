@@ -1,0 +1,1479 @@
+{
+  "id": 2,
+  "title": "GH-300 Practice Test 2",
+  "questions": [
+    {
+      "number": 1,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "A software engineer is working on a large backend application using GitHub Copilot in their IDE. They notice that Copilot provides highly relevant suggestions when working in smaller files, but the quality drops when editing lengthy code files with thousands of lines. What is the most likely reason for this variation in suggestion quality?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Copilot requires manual fine-tuning for each file size before providing accurate suggestions"
+        },
+        {
+          "letter": "B",
+          "text": "The engineer’s IDE lacks the memory to process large files efficiently"
+        },
+        {
+          "letter": "C",
+          "text": "GitHub Copilot has a limited context window, which restricts how much of the surrounding code it can consider at once"
+        },
+        {
+          "letter": "D",
+          "text": "GitHub Copilot disables code completions automatically for files exceeding a certain number of lines"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n- **Option C is CORRECT** because GitHub Copilot operates with a\nlimited context window, which means it can only see a certain number of tokens (which\nincludes both the prompt and relevant surrounding code) when generating suggestions. In\nlarger files, important context might lie outside this window, which may lead to less\naccurate or relevant completions.\n\n- **Option A is INCORRECT** because GitHub Copilot does not\nspecifically require any manual fine-tuning per file. It operates on a high level based\non the visible context available in the editor while the user is writing their code.\n\n- **Option B is INCORRECT** as the IDE’s memory does not directly\nimpact Copilot's AI model response. The suggestions come from cloud-based inference and\ndepend on the context sent, not local processing power. So, this option is incorrect.\n\n- **Option D is INCORRECT** because GitHub Copilot does not disable\ncode completions itself based on the file size. However, the effectiveness may drop due\nto context limits, but there are no hard-coded restrictions.\n\n**Reference:**\n\n- [GitHub Copilot - Prompting guidance based on Context](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=vs-2022#prompting-guidance)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 2,
+      "domain": "GitHub Copilot plans and features",
+      "text": "Which of the following are valid and commonly used commands while using GitHub Copilot in the CLI?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "gh Copilot explain, gh Copilot suggest, gh Copilot extension list"
+        },
+        {
+          "letter": "B",
+          "text": "Copilot.run, Copilot.info, Copilot.chat"
+        },
+        {
+          "letter": "C",
+          "text": "gh codegen, gh audit, gh summarize"
+        },
+        {
+          "letter": "D",
+          "text": "gh Copilot status, gh Copilot init, git Copilot deploy"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n- **Option A is CORRECT** because this set of commands are most\nwidely used and valid commands in GitHub Copilot CLI. Here’s the detailed explanation:\n\n- gh Copilot explain: Used to get the explanation of code or\ncommands.\n\n- gh Copilot suggest: Ask Copilot to provide suggestions for\nperforming a Task.\n\n- gh Copilot extension list: Displays all the available\nextensions and also indicates the proper installation of Copilot.\n\nThis set of commands can enable developers to interact with AI from the terminal in\na seamless way.\n\n- **Option B is INCORRECT** because these commands are not a valid\nset of commands for GitHub CLI. They sound generic but in reality, they don't exist.\n\n- **Option C is INCORRECT** because these commands do not belong to\nGitHub Copilot CLI and cannot be related with Copilot.\n\n- **Option D is INCORRECT** as commands like Copilot init and\nCopilot deploy do not exist in GitHub Copilot’s CLI toolkit. These are just distractors\nto deviate from the actual choice.\n\n**Reference:**\n\n- [https://docs.github.com/en/Copilot/using-github-Copilot/using-github-Copilot-in-the-command-line](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 3,
+      "domain": "GitHub Copilot plans and features",
+      "text": "You are configuring GitHub Copilot in the CLI for a smoother developer experience. Which of the following aliases can be set up to perform common actions like code suggestions and explanations? [Select Two]",
+      "options": [
+        {
+          "letter": "A",
+          "text": "“ghcs” - GitHub Copilot Suggest"
+        },
+        {
+          "letter": "B",
+          "text": "“ghce” - GitHub Copilot Explain"
+        },
+        {
+          "letter": "C",
+          "text": "“ghinit” - Initialize Copilot CLI"
+        },
+        {
+          "letter": "D",
+          "text": "“ghshare” - Share Copilot responses with your colleagues"
+        },
+        {
+          "letter": "E",
+          "text": "“ghrun” - Run Copilot commands in a build pipeline"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "B"
+      ],
+      "explanation": "**Correct Answers: A and B**\n\n- **Option A is CORRECT** because ghcs is a commonly configured\nalias for the GitHub Copilot CLI command to suggest code. It simplifies the user\nexperience by allowing developers to quickly prompt Copilot from the terminal.\n\n- **Option B is CORRECT** because ghce stands for GitHub Copilot\nExplain and is another helpful alias that allows developers to request natural language\nexplanations for code from the terminal.\n\n- **Option C is INCORRECT** because ghinit is not a valid alias and\nhas no specific connection with GitHub Copilot functionality.\n\n- **Option D is INCORRECT** because while GitHub Copilot can assist\nwith code generation, ghshare is not a recognized alias in the Copilot CLI context.\n\n- **Option E is INCORRECT** because ghrun is not an alias related\nto GitHub Copilot commands; it may be confused with GitHub Actions or workflow-related\ncommands but is not valid for Copilot CLI.**\n\n**Reference:**\n\n- [https://docs.github.com/en/Copilot/managing-Copilot/configure-personal-settings/configuring-github-Copilot-in-the-cli#setting-up-aliases](https://docs.github.com/en/copilot/managing-copilot/configure-personal-settings/configuring-github-copilot-in-the-cli#setting-up-aliases)\n\n### Domain: Prompt Crafting and Prompt Engineering",
+      "isMultiSelect": true
+    },
+    {
+      "number": 4,
+      "domain": "Prompt Crafting and Prompt Engineering",
+      "text": "A project team frequently collaborates using GitHub Copilot Chat while developing a cloud-native application. During conversations, they notice that the AI assistant often tailors its responses based on previous messages in the same chat. The team finds it helpful and wonders how GitHub Copilot Chat uses chat history to improve its responses. Which of the following best explains how GitHub Copilot Chat uses chat history to improve its responses when a project team collaborates on a cloud-native application?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It uses recent messages in the current chat session to maintain context and provide more relevant answers"
+        },
+        {
+          "letter": "B",
+          "text": "It permanently stores all previous chat conversations and uses them to retrain the model for future responses"
+        },
+        {
+          "letter": "C",
+          "text": "It syncs chat history across user accounts to generate collective insights from team members’ past interactions"
+        },
+        {
+          "letter": "D",
+          "text": "It connects to the user's GitHub activity history to automatically apply project-specific suggestions"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n- **Option A is CORRECT** because GitHub Copilot Chat leverages\nchat history within the current session to maintain context, enabling it to give\nequivalent and relevant replies based on the ongoing conversation. However, once the\nsession ends, this context is cleared, ensuring user privacy. This approach helps the\ncopilot to generate relevant answers by leveraging the recent chat history.\n\n- **Option B is INCORRECT** because GitHub Copilot Chat does not\nstore conversations permanently or retrain its models based on individual users’\nhistory. This protects user confidentiality and complies with data privacy standards.\n\n- **Option C is INCORRECT** as Copilot Chat does not sync chats\nacross users or accounts. Each session remains isolated to avoid data sharing between\nindividuals or teams. So, this cannot be a valid choice.\n\n- **Option D is INCORRECT** because while GitHub Copilot can offer\nsuggestions based on the open files or visible code in the IDE, it does not analyze\nGitHub activity history to modify its responses in chat. This is not an existing feature\nthat Copilot offers.\n\n**Reference:**\n\n- [Get better answers by setting the context for GitHub Copilot Chat in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=vs-2022)\n\n### Domain: Prompt Crafting and Prompt Engineering",
+      "isMultiSelect": false
+    },
+    {
+      "number": 5,
+      "domain": "Prompt Crafting and Prompt Engineering",
+      "text": "An SDET is trying to auto-generate unit tests for a Python function. However the suggestions are not consistent and sometimes look irrelevant for the required context. The expert realizes that the prompt which is being used is too vague: “Create Tests”. To improve the results, which of the following statements can be considered as the best ways to craft prompts to get the expected suggestions from GitHub Copilot. (SELECT THREE)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Start writing your code with a descriptive comment that explains the purpose of the code block"
+        },
+        {
+          "letter": "B",
+          "text": "Include examples or expected outcomes to guide Copilot toward your strategy"
+        },
+        {
+          "letter": "C",
+          "text": "Avoid overly generic statements like “generate function” or “Create Tests”, as they lack context"
+        },
+        {
+          "letter": "D",
+          "text": "Use unrelated terms in your prompt to test Copilot’s ability to generate suggestions even on vague prompts"
+        },
+        {
+          "letter": "E",
+          "text": "SDET should continue to use the vague prompts or the prompts that have almost no context as Copilot is smart enough to do everything on its own"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "**Correct Answers: A, B and C**\n\n- **Option A is CORRECT** because when you initiate writing your\ncode and need assistance from Copilot it's always a best practice to write the comments\nwhich include proper description of the task that you want to perform before starting\nwith your code. If your purpose is clearly understandable in the comments, then it will\nhelp Copilot to generate very accurate suggestions.\n\n- **Option B is CORRECT** because when you include examples along\nwith the prompts, it will enable Copilot to understand the expected pattern and the\noutcome that you are expecting it to return, this will not just help you get the quality\nsuggestions from Copilot but also it can remember it for the upcoming code blocks.\n\n- **Option C is CORRECT,** as avoiding vague prompts such as\n“//generate function” or “//Create Tests” is essential. These don’t convey what the\nfunction is supposed to do, so Copilot’s output will be a random guess.\n\n- **Option D is INCORRECT** because using unrelated keywords will\nconfuse Copilot and reduce output quality. This is not a recommended strategy and\ndoesn’t contribute to effective prompting.So, make sure that all the keywords that you\nuse while writing the prompt are inline and relevant to the problem statement.\n\n- **Option E is INCORRECT** because While GitHub Copilot is a\npowerful AI assistant trained on a wide range of code patterns, it is not a mind reader.\nIt relies heavily on the context you provide. That’s why using vague prompts like \"write\ntest\" or \"fix this\" is not a good practice, especially for SDETs.\n\n**Reference:**\n\n- ** **[Prompting guidance](https://learn.microsoft.com/en-us/visualstudio/ide/copilot-chat-context?view=vs-2022#prompting-guidance)\n\n### Domain: Developer use cases for AI",
+      "isMultiSelect": true
+    },
+    {
+      "number": 6,
+      "domain": "Developer use cases for AI",
+      "text": "A Technology lead wants to present data-backed insights to leadership on how effectively their engineering team is using GitHub Copilot. They decide to leverage GitHub Copilot's Productivity API to collect detailed usage statistics across the team’s repositories. Which of the following metrics can the tech lead collect using the Productivity API to understand Copilot’s real impact? (SELECT THREE)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Average Daily Active Users of Copilot across the team"
+        },
+        {
+          "letter": "B",
+          "text": "Total Acceptance Rate of Copilot-generated code suggestions"
+        },
+        {
+          "letter": "C",
+          "text": "Number of Copilot-generated code lines manually modified after suggestion"
+        },
+        {
+          "letter": "D",
+          "text": "Lines of Code Accepted from Copilot into the codebase"
+        },
+        {
+          "letter": "E",
+          "text": "Number of production incidents caused by Copilot-generated code"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "**Correct Answers: A, B and D**\n\n- **Option A is CORRECT** because Average Daily Active Users is a\nkey adoption metric that shows how many developers are actively using GitHub Copilot\neach day within a given organization or repository scope. This information allows\nengineering managers and clients to understand how widely Copilot is being accepted\nacross the team, and whether it's being consistently integrated into developer\nworkflows. High active users' values typically reflect good engagement and continuous\nreliance on Copilot as a daily coding assistant.\n\n- **Option B is CORRECT** because the Total Acceptance Rate (TAR)\nhelps assess how often developers accept Copilot’s code suggestions after they are\npresented. A high TAR can indicate that developers find the suggestions relevant,\nuseful, and trustworthy. This metric provides a direct way to measure Copilot's\ninfluence on developer productivity, since the more developers accept the suggestions,\nthe more the tool contributes to the actual code contributions.\n\n- **Option D is CORRECT** as Lines of Code Accepted is a direct\nquantitative measure of how much Copilot-generated code is actually making its way into\nthe codebase. This metric can help organizations assess how significantly Copilot\ncontributes to the overall code output. It also offers tangible evidence of time and\neffort saved, especially in larger codebases where boilerplate and repetitive patterns\nare common.\n\n- **Option C is INCORRECT** because while it’s true that developers\noften modify or adjust Copilot's suggestions before accepting them, GitHub’s\nProductivity API does not currently have any capability to provide a metric that tracks\nhow much a suggestion was manually edited before being accepted. This kind of analysis\nwould require deeper IDE-level instrumentation and is not currently captured in the\nProductivity API metrics.\n\n- **Option E is INCORRECT** because the Productivity API does not\ntrack operational or post-deployment metrics like production incidents or bugs caused by\nCopilot suggestions. Additionally, as part of the best practices, using the Copilot\ngenerated code directly in production is not a typical example of responsible AI. It’s\nalways suggested that all users must go through and entirely test the code generated by\nCopilot before deploying it to the production environments.\n\n**Reference:**\n\n- [Implementing a measurement framework](https://learn.microsoft.com/en-us/training/modules/developer-use-cases-for-ai-with-github-copilot/5-understand-limitations-measure-impact?ns-enrollment-type=learningpath&ns-enrollment-id=learn.github-copilot-2)\n\n### Domain: Privacy fundamentals and content exclusions",
+      "isMultiSelect": true
+    },
+    {
+      "number": 7,
+      "domain": "Privacy fundamentals and content exclusions",
+      "text": "A security-focused software engineer is reviewing how GitHub Copilot can help avoid risky coding practices during development. The engineer wants to understand how Copilot provides warnings or suggestions that enhance code security. Which of the following statements accurately reflects GitHub Copilot’s capabilities in this area? (SELECT TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "GitHub Copilot automatically blocks any code pattern that matches a known CVE (Common Vulnerabilities and Exposures) from being written"
+        },
+        {
+          "letter": "B",
+          "text": "GitHub Copilot can suggest safer alternatives when risky patterns like hardcoded credentials or SQL injections are detected"
+        },
+        {
+          "letter": "C",
+          "text": "Copilot provides security warnings based on real-time static analysis and scanning of your codebase"
+        },
+        {
+          "letter": "D",
+          "text": "Copilot’s ability to detect insecure code is based on its training data and pattern recognition, not active code scanning"
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D"
+      ],
+      "explanation": "**Correct Answers: B and D**\n\n- **Option B is CORRECT** because GitHub Copilot leverages its\ntraining data to recognise insecure coding patterns such as SQL injections, use of\nhardcoded credentials, or unsafe function usage. When it detects such patterns, it may\nsuggest safer alternatives like parameterised queries or environment variables to\nimprove code security. Although it's up to the user to accept them or not.\n\n- **Option D is CORRECT** because GitHub Copilot does not perform\nactive static analsis or runtime scanning. Instead, it relies on its language model\ntrained on public code and best practices. It can make intelligent suggestions by\nrecognising potentially risky coding structures or patterns, but it does not raise\nsecurity alerts like a dedicated vulnerability scanner.\n\n- **Option C is INCORRECT** because Copilot does not block users\nfrom writing known CVE-associated patterns. It’s a suggestion engine, not an enforcement\ntool. It may avoid suggesting dangerous patterns, but it won’t actively prevent code\nfrom being written.\n\n- **Option D is INCORRECT** because Copilot does not perform\nreal-time static analysis. GitHub offers other tools like CodeQL or Dependabot for\nscanning and vulnerability alerts, but these are separate from Copilot's functionality.\n\n**Reference:**\n\n- [Security best practices with GitHub Copilot](https://github.blog/ai-and-ml/github-copilot/github-for-beginners-security-best-practices-with-github-copilot/#lets-talk-security)\n\n### Domain: Privacy fundamentals and content exclusions",
+      "isMultiSelect": true
+    },
+    {
+      "number": 8,
+      "domain": "Privacy fundamentals and content exclusions",
+      "text": "A technology-driven team at a large organisation has configured content exclusions in GitHub Copilot to prevent sensitive configuration files and internal libraries from influencing AI-generated code suggestions. However, one of the developers notices that despite excluding certain files, GitHub Copilot still appears to suggest code patterns that resemble internal logic. What are some reasons why GitHub Copilot’s content exclusions might not always work? (SELECT TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Content exclusions are ignored when editing files in the GitHub web interface instead of an IDE like Visual Studio Code"
+        },
+        {
+          "letter": "B",
+          "text": "In some IDEs, such as Visual Studio Code, semantic information from excluded files may still be inferred by Copilot if it's visible in non-excluded files"
+        },
+        {
+          "letter": "C",
+          "text": "Copilot only honours exclusions configured at the enterprise level; organisation-level or repository-level exclusions are not supported"
+        },
+        {
+          "letter": "D",
+          "text": "When developers interact with GitHub Copilot Chat using the “@github” participant in Visual Studio or VS Code, content exclusions may not be applied"
+        },
+        {
+          "letter": "E",
+          "text": "If sensitive code is duplicated into a non-excluded file, Copilot may reference that content since it's now outside the excluded scope"
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D"
+      ],
+      "explanation": "**Correct Answers: B and D**\n\n- **Option B is CORRECT** because, even when files are excluded,\nsome IDEs like Visual Studio Code may still expose semantic data, such as symbol\ndefinitions or type information, from excluded files. GitHub Copilot can use that\nvisible data in its suggestions, which makes the exclusions not fully effective in\npractice.\n\n- **Option D is CORRECT** because GitHub Copilot Chat does not\nhonour exclusions when queries are made using the “@github” participant in IDEs like\nVisual Studio or VS Code. This means developers might inadvertently access excluded file\ncontent via chat.\n\n- **Option A is INCORRECT** because the platform, such as the web\ninterface or IDE, has no impact on the enforcement of content exclusions. GitHub Copilot\nenforces exclusions based on file and repository settings, regardless of where code is\nbeing edited.\n\n- **Option C is INCORRECT** because GitHub supports exclusions at\nthe repository and organisation levels as well, not just at the enterprise level. This\nis well-documented in Copilot’s configuration documentation. So this option does not\noffer a valid choice.\n\n- **Option E is INCORRECT** because copying content from an\nexcluded file into a new, non-excluded file is essentially removing the protection. Once\nthat content is outside the exclusion zone, it’s expected to be included in suggestions;\nit’s not a limitation of the exclusion feature itself.\n\n**References:**\n\n- [Limitations of content exclusions](https://docs.github.com/en/copilot/managing-copilot/configuring-and-auditing-content-exclusion/excluding-content-from-github-copilot#limitations-of-content-exclusions)\n\n- [Manage content exclusions](https://learn.microsoft.com/en-us/training/modules/github-copilot-management-and-customizations/4-manage-content-exclusions?ns-enrollment-type=learningpath&ns-enrollment-id=learn.github-copilot)\n\n### Domain: Privacy fundamentals and content exclusions",
+      "isMultiSelect": true
+    },
+    {
+      "number": 9,
+      "domain": "Privacy fundamentals and content exclusions",
+      "text": "A QA Automation Lead is developing regression test cases for a newly released microservice. While working in their IDE, they notice GitHub Copilot isn't offering useful suggestions or sometimes, no suggestions at all. In such a scenario, which of the following actions can help improve Copilot's responses and encourage better code suggestions? (SELECT TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Attempt to rewrite the initial comment or prompt with more descriptive intent, including function names and expected behaviour, along with the relevant examples"
+        },
+        {
+          "letter": "B",
+          "text": "Continue typing the function body manually without changing anything, and expect Copilot to eventually catch up"
+        },
+        {
+          "letter": "C",
+          "text": "Use inline comments or docstrings above the function to clarify what the function should achieve. Ensure that clear expectations are set in the form of comments"
+        },
+        {
+          "letter": "D",
+          "text": "Disable and re-enable GitHub Copilot to reset its learning and start over from scratch"
+        },
+        {
+          "letter": "E",
+          "text": "Switch to a different programming language, as Copilot is limited to one language at a time, like Python"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "C"
+      ],
+      "explanation": "**Correct Answers: A and C**\n\n- **Option A is CORRECT** because Copilot relies heavily on\ncontext. When the initial comment or prompt is vague or too short, it may not generate\nhelpful suggestions. Rewriting your comment with a specific goal in mind, such as naming\nthe function, clarifying expected inputs and outputs, or stating the goal, can help\nCopilot better understand your expectations or aspirations. Think of it like giving a\nhelpful nudge: instead of using comments such as “// helper function”, use something\nlike “// helper function to compare two user tokens and return true if they match”.\n\n- **Option C is CORRECT** because Copilot can parse inline comments\nand docstrings to understand what your code is trying to do. When suggestions are\nlacking, try adding clear explanations just above your function. This can give it the\nnecessary clues to generate relevant code. These contextual hints can gradually increase\nthe quality of what Copilot offers, especially in test case writing.\n\n- **Option B is INCORRECT** because just continuing to type won’t\nnecessarily make Copilot respond better. If the model doesn’t have enough contextual\ninformation from your prompts, it won’t “catch up” or magically can’t guess what’s\nneeded. Adding better structure or prompts is more effective than simply hoping it will\nimprove on its own.\n\n- **Option D is INCORRECT** because turning Copilot off and on\nagain doesn’t reset any intelligent behaviour. Copilot doesn’t store personal “learning”\non your machine that can be refreshed this way. Its suggestions are generated based on\nthe current code context and comments; it doesn't have session-based memory to reset.\n\n- **Option E is INCORRECT** because GitHub Copilot is designed to\nsupport multiple programming languages simultaneously. If you’re working in Python and\nnot getting good suggestions, switching to JavaScript won’t improve Copilot’s responses.\nThe key is not the language itself, but how you guide Copilot by providing proper\ndirection in the form of prompts and comments in any language.\n\n**Reference:**\n\n- [Using GitHub Copilot in your IDE: Tips, tricks, and best practices - #context-context-context](https://github.blog/developer-skills/github/how-to-use-github-copilot-in-your-ide-tips-tricks-and-best-practices/#context-context-context)\n\n### Domain: Developer use cases for AI",
+      "isMultiSelect": true
+    },
+    {
+      "number": 10,
+      "domain": "Developer use cases for AI",
+      "text": "A developer is working on a performance-critical module and expects GitHub Copilot to suggest highly efficient algorithms based on industry best practices. However, after reviewing a few completions, the developer realizes the generated code, although functional, is not optimized for performance or readability. What does this scenario best illustrate about the limitations of using GitHub Copilot?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "GitHub Copilot is designed to deliver production-ready, performance-optimized solutions with minimal developer input"
+        },
+        {
+          "letter": "B",
+          "text": "GitHub Copilot automatically benchmarks its suggestions and improves them in real-time"
+        },
+        {
+          "letter": "C",
+          "text": "GitHub Copilot rejects generating code for performance-critical systems due to liability concerns"
+        },
+        {
+          "letter": "D",
+          "text": "GitHub Copilot may generate valid but suboptimal code, and developers are expected to apply judgment and refactor when necessary"
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "explanation": "**Correct Answer: D**\n\n- **Option D is CORRECT** because GitHub Copilot generates\nsuggestions based on patterns in publicly available code but does not evaluate\nperformance trade-offs, architecture efficiency, or business-critical constraints.\nDevelopers should treat its output as a first draft, not a final version. Especially in\nperformance-sensitive modules, human intervention is key to auditing, refactoring, and\noptimizing the code.\n\n- **Option A is INCORRECT** because Copilot is not designed to be\nan automatic expert-level performance optimizer. It does not replace algorithmic\nthinking or project-specific tuning. Developer skill is still required to ensure quality\nand efficiency. It cannot directly deliver the production-ready code.\n\n- **Option B is INCORRECT** as Copilot does not run benchmarks or\ntest its code. It doesn't self-improve or evaluate suggestions during runtime. So, it's\nthe responsibility of the developer to test, validate, and improve the code after\ngeneration.\n\n- **Option C is INCORRECT** because by default copilot doesn’t\nblock any performance critical systems, although it cannot help you very effectively\nwith the entire request, but can still help with the code suggestions on a high level or\nwith an idea of implementation of the code workflow or how to perform specific tasks.\n\n**Reference:**\n\n- [Understand limitations and measure impact](https://learn.microsoft.com/en-us/training/modules/developer-use-cases-for-ai-with-github-copilot/5-understand-limitations-measure-impact?ns-enrollment-type=learningpath&ns-enrollment-id=learn.github-copilot-2)\n\n### Domain: Responsible AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 11,
+      "domain": "Responsible AI",
+      "text": "You are part of a data governance team tasked with reviewing enterprise-wide use of generative AI tools like Microsoft Copilot. A product manager has integrated Copilot into a customer support solution to draft email responses. What is the primary reason the output of the AI-generated emails should be validated before sending to customers?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AI-generated content may contain biased or culturally insensitive statements"
+        },
+        {
+          "letter": "B",
+          "text": "AI tools sometimes struggle with grammar and sentence structure"
+        },
+        {
+          "letter": "C",
+          "text": "The product manager is not qualified to review AI outputs independently"
+        },
+        {
+          "letter": "D",
+          "text": "Customers are likely to reject machine-generated responses automatically"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n- **Option A is CORRECT** because AI-generated responses,\nespecially in customer-facing communication, can unintentionally reflect biases,\nstereotypes, or inappropriate phrasing. Validating the output ensures messaging is\nethical, inclusive, and aligns with the organization’s brand values, helping avoid\nreputational and compliance risks.\n\n- **Option B is INCORRECT** because while minor grammatical issues\nmay occur, most modern AI tools generate well-structured and coherent sentences. The\ngreater concern lies in bias and cultural insensitivity, which are more likely to cause\nethical or reputational issues.\n\n- **Option C is INCORRECT** since qualification is subjective. The\nfocus should not be on individual roles but rather on implementing a consistent review\nprocess to check for accuracy, tone, and compliance, regardless of who is reviewing the\ncontent.\n\n- **Option D is INCORRECT** because customers are increasingly open\nto engaging with AI-powered tools, especially when responses are accurate and\nrespectful. The emphasis should be on ensuring trust and responsibility, not assuming\nautomatic rejection.\n\n**References:**\n\n- [https://learn.microsoft.com/en-us/training/modules/embrace-responsible-ai-principles-practices/2-prepare-implications-responsible-ai](https://learn.microsoft.com/en-us/training/modules/embrace-responsible-ai-principles-practices/2-prepare-implications-responsible-ai)\n\n- [https://github.com/microsoft/vscode/issues/245281](https://github.com/microsoft/vscode/issues/245281)\n\n### Domain: Responsible AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 12,
+      "domain": "Responsible AI",
+      "text": "A multinational enterprise uses an AI tool to filter resumes for software engineering roles. Over time, HR observes that the shortlisted candidates are predominantly male from a specific region. What is the most likely root cause of this issue?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "The tool lacks access to a sufficient number of resumes"
+        },
+        {
+          "letter": "B",
+          "text": "The AI was trained on historical hiring data that may include human bias"
+        },
+        {
+          "letter": "C",
+          "text": "The system uses incorrect formatting to evaluate candidate data"
+        },
+        {
+          "letter": "D",
+          "text": "There is a conflict between regional compliance laws and the hiring workflow"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n- **Option B is CORRECT** because when AI models are trained on\nhistorical data, they inherit existing biases in that dataset. In this case, if prior\nhiring decisions favored a specific demographic, the AI will replicate and perpetuate\nthis bias unless bias mitigation strategies are applied.\n\n- **Option A is INCORRECT** because while a low volume of data can\nreduce the overall effectiveness of the model, it **does not automatically result\nin biased outcomes.** Bias arises from **unbalanced** or\n**skewed data**, not just insufficient data.\n\n- **Option C is INCORRECT** because formatting issues typically\nlead to **technical problems** like unreadable resumes or missing\ninformation. They do not explain **consistent demographic trends** like\nfavoring one gender or region.\n\n- **Option D is INCORRECT** because while legal or compliance\nconstraints can affect how hiring workflows are designed, they **do not directly\nlead to biased filtering **unless the system is explicitly using regional or\ndemographic filters, which isn’t implied here.\n\n**Reference:**\n\n- [https://learn.microsoft.com/en-us/azure/well-architected/ai/responsible-ai](https://learn.microsoft.com/en-us/azure/well-architected/ai/responsible-ai)\n\n### Domain: Responsible AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 13,
+      "domain": "Responsible AI",
+      "text": "Your healthcare startup is integrating an AI system for clinical data triage. To align with responsible AI practices, which of the following actions would best support ethical operations?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Avoid documenting development decisions to reduce legal exposure"
+        },
+        {
+          "letter": "B",
+          "text": "Routinely fine-tune models without user consultation"
+        },
+        {
+          "letter": "C",
+          "text": "Publish model limitations and ensure explainability of AI decisions"
+        },
+        {
+          "letter": "D",
+          "text": "Prioritize fast delivery over model fairness and testing"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n- **Option C is CORRECT** because responsible AI emphasizes\ntransparency, accountability, and explainability—especially in sensitive industries like\nhealthcare, where decisions can directly impact human lives. Clearly articulating the\ncapabilities, constraints, and reasoning behind AI outputs builds trust with clinicians\nand patients, facilitates regulatory compliance, and supports informed decision-making.\n\n- **Option A is INCORRECT** as failure to document development\ndecisions undermines traceability and weakens the ability to perform audits or address\nissues post-deployment. Responsible AI frameworks, including Microsoft's and ISO/IEC\nstandards, advocate for robust documentation throughout the AI lifecycle.\n\n- **Option B is INCORRECT** because engaging end users, especially\ndomain experts and affected stakeholders, is a critical step in responsible model\ndevelopment. Bypassing user input not only risks deploying misaligned models but also\nviolates principles of inclusivity and collaborative validation.\n\n- **Option D is INCORRECT** since ethical and responsible AI\nrequires balancing innovation speed with comprehensive testing. Sacrificing fairness or\nbias evaluation for fast delivery can lead to unintended harm, regulatory penalties, or\npublic mistrust—particularly in domains involving health, safety, or finance.\n\n**References:**\n\n- [https://www.microsoft.com/en-us/ai/responsible-ai](https://www.microsoft.com/en-us/ai/responsible-ai)\n\n- [https://support.microsoft.com/en-us/topic/what-is-responsible-ai-33fc14be-15ea-4c2c-903b-aa493f5b8d92](https://support.microsoft.com/en-us/topic/what-is-responsible-ai-33fc14be-15ea-4c2c-903b-aa493f5b8d92)\n\n- [https://github.com/kkm24132/ResponsibleAI](https://github.com/kkm24132/ResponsibleAI)\n\n### Domain: Responsible AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 14,
+      "domain": "Responsible AI",
+      "text": "Your team is building a credit scoring model for a digital bank. The model uses features like age, location, and profession. What is the best strategy to reduce the potential harm caused by bias or unfair predictions?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Remove all features from the dataset to ensure neutrality"
+        },
+        {
+          "letter": "B",
+          "text": "Use the model as-is if it meets accuracy benchmarks"
+        },
+        {
+          "letter": "C",
+          "text": "Conduct fairness audits and test the model on diverse groups"
+        },
+        {
+          "letter": "D",
+          "text": "Let the business team manually adjust scores for underrepresented groups"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n- **Option C is CORRECT** because conducting fairness audits and\napplying stress testing across different demographic groups are critical practices in\nmitigating algorithmic harms. These methods help proactively identify unintended bias in\nmodel outcomes, enabling the team to take corrective actions before the system is\ndeployed. Fairness audits evaluate disparities across sensitive attributes (e.g.,\ngender, age, ethnicity), while stress testing simulates edge-case scenarios to assess\nthe model’s robustness and equity. This aligns with responsible AI principles that\nemphasize fair treatment, transparency, and inclusivity in machine learning systems.\n\n- **Option A is INCORRECT** because naively removing all\nfeatures—especially those that may contribute to decision accuracy—can substantially\nreduce model performance. Moreover, this doesn't guarantee fairness. Bias can still\nsneak in through proxy variables (e.g., zip code correlating with ethnicity), so the\nsolution requires deeper evaluation rather than feature elimination alone.\n\n- **Option B is INCORRECT** since passing accuracy benchmarks\ndoesn’t imply ethical soundness. A model may perform well overall but still produce\nunfair or disparate outcomes for specific subgroups. Responsible AI frameworks urge\npractitioners to consider both performance and fairness, treating them as complementary\npillars—not trade-offs.\n\n- **Option D is INCORRECT** because relying on manual overrides\nafter the model has made a prediction introduces inconsistency and lacks transparency.\nIt also creates dependency on human judgment that may be subjective or biased in itself.\nRather than patching outcomes post hoc, a systemic approach through bias detection and\nmitigation during development is far more effective and accountable.\n\n**Reference:**\n\n- [https://github.com/holistic-ai/mitigation-roadmaps](https://github.com/holistic-ai/mitigation-roadmaps)\n\n### Domain: Responsible AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 15,
+      "domain": "Responsible AI",
+      "text": "Which of the following principles is most critical when designing and deploying ethical AI systems in customer-facing applications?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Maximizing profit through automation"
+        },
+        {
+          "letter": "B",
+          "text": "Ensuring user consent and data privacy"
+        },
+        {
+          "letter": "C",
+          "text": "Applying neural networks wherever possible"
+        },
+        {
+          "letter": "D",
+          "text": "Deploying AI to reduce human resource requirements"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n- **Option B is CORRECT** because at the heart of ethical AI lies a\ncommitment to protecting user rights and fostering trust. Ensuring user consent,\nmaintaining data privacy, and upholding transparency are essential pillars of\nresponsible AI systems. Especially in customer-facing applications, ethical deployment\nrequires that users understand how their data is used and that they retain agency over\nthat usage. These principles not only align with global data protection regulations like\nGDPR but also enhance long-term adoption and public trust in AI technologies.\n\n- **Option A is INCORRECT** because prioritizing profit at the\nexpense of ethical considerations often results in design shortcuts, lack of\naccountability, and potentially harmful outcomes. Such practices can erode trust and\ninvite regulatory scrutiny.\n\n- **Option C is INCORRECT** since choosing algorithms purely based\non their popularity or technical appeal (e.g., deep learning or neural networks) may not\nyield the best results in every use case. Ethical AI development requires context-aware\ndecision-making, where explainability and appropriateness often outweigh raw complexity.\n\n- **Option D is INCORRECT** because automation for efficiency must\nbe tempered with ethical oversight. Reducing human involvement without safeguards can\nstrip decision-making of empathy, introduce bias, and expose systems to cascading errors\nwith real-world consequences.\n\n**References:**\n\n- [https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#data-privacy-framework-dpf](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#data-privacy-framework-dpf)\n\n- [https://github.com/kkm24132/ResponsibleAI](https://github.com/kkm24132/ResponsibleAI)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 16,
+      "domain": "GitHub Copilot plans and features",
+      "text": "A developer is new to GitHub Copilot Chat and opens Visual Studio Code. They want to understand what Copilot Chat can help with directly inside the IDE. What is the primary function of GitHub Copilot Chat within supported IDEs like VS Code?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Automatically commits and pushes code to GitHub repositories"
+        },
+        {
+          "letter": "B",
+          "text": "Answers natural language coding questions and provides code suggestions inline"
+        },
+        {
+          "letter": "C",
+          "text": "Analyzes repository security and generates pull request templates"
+        },
+        {
+          "letter": "D",
+          "text": "Translates comments into different spoken languages"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n- **Option A is INCORRECT** because GitHub Copilot Chat does not\nhandle version control actions like committing or pushing code. These tasks are\nperformed through Git or GitHub tools, not through the chat interface. The chat\nassistant is focused on code guidance, not direct repository manipulation.\n\n- **Option B is CORRECT** because Copilot Chat is designed to\nassist developers within the IDE by responding to natural language prompts, generating\ncode snippets, explaining complex logic, and offering suggestions in real time — all in\ncontext with the currently open file and project.\n\n- **Option C is INCORRECT** because Copilot Chat does not perform\nrepository security analysis or generate templates for pull requests. Those are\nadministrative or DevOps features unrelated to Copilot Chat’s AI-assisted coding\nsupport.\n\n- **Option D is INCORRECT** because while Copilot Chat can\ninterpret comments and code, it is not intended to translate spoken languages. It\nfocuses on code-related natural language understanding, not linguistic translation.\n\n**Reference:**\n\n- [https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-your-ide](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-your-ide)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 17,
+      "domain": "GitHub Copilot plans and features",
+      "text": "You’re advising a team on switching from GitHub Copilot Individual to Business. What features should they expect to gain in the Business plan? (Select Two)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Access to GitHub Copilot for CLI"
+        },
+        {
+          "letter": "B",
+          "text": "IP indemnity for code suggestions"
+        },
+        {
+          "letter": "C",
+          "text": "Organization-level usage controls"
+        },
+        {
+          "letter": "D",
+          "text": "Free access to private GitHub Actions runners"
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "C"
+      ],
+      "explanation": "**Correct Answers: B and C**\n\n- **Option A is INCORRECT** because GitHub Copilot for CLI is\navailable to both Individual and Business users. It’s not a differentiating feature of\nthe Business plan.\n\n- **Option B is CORRECT** because GitHub Copilot Business offers IP\nindemnity, meaning GitHub provides legal protection in case of intellectual property\ndisputes related to code suggestions. This is not available in the Individual plan.\n\n- **Option C is CORRECT** because Copilot Business supports\norganization-level management, such as enabling/disabling Copilot access for teams,\ntracking usage, and enforcing policies — critical for enterprise control.\n\n- **Option D is INCORRECT** as GitHub Actions runners are a\nseparate service. Copilot Business does not provide free or private runners as part of\nits subscription.\n\n**References:**\n\n- [https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot-for-business/2-about-github-copilot-business](https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot-for-business/2-about-github-copilot-business)\n\n- [https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot](https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": true
+    },
+    {
+      "number": 18,
+      "domain": "GitHub Copilot plans and features",
+      "text": "An enterprise wants to automate billing insights and manage user licenses for Copilot Business. What REST API endpoint should the administrator use for subscription-level management?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "/repos/:owner/:repo/hooks"
+        },
+        {
+          "letter": "B",
+          "text": "/orgs/:org/copilot/billing"
+        },
+        {
+          "letter": "C",
+          "text": "/users/:username/followers"
+        },
+        {
+          "letter": "D",
+          "text": "/enterprises/:enterprise/settings"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n- **Option A is INCORRECT** because this endpoint is for\nconfiguring webhooks in a repository, unrelated to billing or Copilot subscriptions.\n\n- **Option B is CORRECT** because this is the dedicated API\nendpoint for managing GitHub Copilot Business billing and usage at the organization\nlevel. It allows programmatic insights into license distribution, billing periods, and\nmore.\n\n- **Option C is INCORRECT** since it refers to social features like\nfollowing users, which has no relevance to Copilot usage or subscriptions.\n\n- **Option D is INCORRECT** because this endpoint applies to\ngeneral enterprise settings, not specific to Copilot licensing or billing.\n\n**References:**\n\n- [https://docs.github.com/en/enterprise-cloud@latest/rest/copilot?apiVersion=2022-11-28](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot?apiVersion=2022-11-28)\n\n- [https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot](https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 19,
+      "domain": "GitHub Copilot plans and features",
+      "text": "A developer is browsing a public repository on GitHub.com and notices an unfamiliar function in the code. They want to understand what it does without switching to their IDE. What is a key benefit of using GitHub Copilot Chat directly on GitHub.com in this scenario?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It allows users to modify repository secrets inline"
+        },
+        {
+          "letter": "B",
+          "text": "It integrates issue tracking directly with calendar scheduling"
+        },
+        {
+          "letter": "C",
+          "text": "It provides context-aware explanations of code blocks within the browser"
+        },
+        {
+          "letter": "D",
+          "text": "It automatically merges pull requests across all forks"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n- **Option A is INCORRECT** because modifying secrets inline is not\npermitted due to security concerns. GitHub Copilot Chat does not access or modify\nsecrets.\n\n- **Option B is INCORRECT** since Copilot Chat does not integrate\nwith calendars or issue scheduling features.\n\n- **Option C is CORRECT** because GitHub Copilot Chat on GitHub.com\nenables inline code understanding — it reads context from visible code and responds with\nexplanations, summaries, or suggestions without switching to an IDE.\n\n- **Option D is INCORRECT** because auto-merging pull requests\nacross forks is a repo-level setting and not related to Copilot Chat functionality.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/getting-started-with-prompts-for-copilot-chat](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/getting-started-with-prompts-for-copilot-chat)\n\n- [https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-your-ide](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-your-ide)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 20,
+      "domain": "GitHub Copilot plans and features",
+      "text": "Which of the following represents a use case where GitHub Copilot Chat provides the most benefit?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Performing automated browser testing with Selenium"
+        },
+        {
+          "letter": "B",
+          "text": "Explaining unfamiliar code snippets during onboarding"
+        },
+        {
+          "letter": "C",
+          "text": "Scheduling sprint planning meetings"
+        },
+        {
+          "letter": "D",
+          "text": "Exporting project analytics to Excel"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n- **Option A is INCORRECT** because while Copilot may assist with\ntest code generation, browser testing setup and automation is usually better handled\nthrough scripts and frameworks — not a strong Chat use case.\n\n- **Option B is CORRECT** because Copilot Chat shines when helping\ndevelopers understand, debug, and explain code — especially during onboarding or while\nreviewing legacy code.\n\n- **Option C is INCORRECT** since sprint planning is a project\nmanagement task, not one Copilot Chat is equipped to handle.\n\n- **Option D is INCORRECT** because Copilot Chat does not export\nanalytics; it is not integrated with reporting tools or dashboards.\n\n**Reference:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 21,
+      "domain": "GitHub Copilot plans and features",
+      "text": "A team notices GitHub Copilot Chat is taking longer to respond during heavy development hours. They want to improve its performance for faster, more relevant suggestions. Which of the following actions can help optimize Copilot Chat performance? (Select two)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Break down large files into smaller, modular components"
+        },
+        {
+          "letter": "B",
+          "text": "Increase GPU power on the local development machine"
+        },
+        {
+          "letter": "C",
+          "text": "Keep prompts short, specific, and focused"
+        },
+        {
+          "letter": "D",
+          "text": "Enable GitHub Copilot Labs experimental features"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "C"
+      ],
+      "explanation": "**Correct Answers: A and C**\n\n- **Option A is CORRECT** because Copilot Chat relies heavily on\ncontext windows. When files are too large, context injection becomes slower and less\neffective. Modularizing code allows Copilot to focus on relevant parts, improving speed\nand accuracy.\n\n- **Option B is INCORRECT** because GitHub Copilot Chat runs\ninference on cloud-based servers — not your local machine. Upgrading your hardware won’t\naffect response time.\n\n- **Option C is CORRECT** because short, precise prompts are easier\nfor Copilot to process. This increases the relevance and speed of suggestions,\nespecially during heavy usage periods.\n\n- **Option D is INCORRECT** because while Labs may offer\nexperimental capabilities, they do not guarantee improved performance and are meant for\nfeature exploration, not optimization.\n\n**Reference:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/getting-started-with-prompts-for-copilot-chat](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/getting-started-with-prompts-for-copilot-chat)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": true
+    },
+    {
+      "number": 22,
+      "domain": "GitHub Copilot plans and features",
+      "text": "Which of the following accurately reflects a known limitation of GitHub Copilot Chat?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Copilot Chat cannot explain code comments"
+        },
+        {
+          "letter": "B",
+          "text": "It may generate insecure code if not reviewed carefully"
+        },
+        {
+          "letter": "C",
+          "text": "Copilot Chat deletes temporary files after each session"
+        },
+        {
+          "letter": "D",
+          "text": "Copilot Chat requires a GitHub Enterprise license to function"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n- **Option A is INCORRECT** because Copilot Chat can explain\ncomments and even convert them into code — this is part of its core functionality.\n\n- **Option B is CORRECT** because, like all generative AI models,\nCopilot may produce insecure or inefficient code. It doesn’t validate outputs for\nsecurity, so manual review is critical to avoid vulnerabilities.\n\n- **Option C is INCORRECT** because Copilot Chat does not handle\nfile management — it operates in-session within your IDE/editor and does not delete or\nmanage files.\n\n- **Option D is INCORRECT** as Copilot Chat is available under\nCopilot for Individuals and Business; it does not require a GitHub Enterprise plan.\n\n**Reference:**\n\n- [https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-github](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-github)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 23,
+      "domain": "GitHub Copilot plans and features",
+      "text": "While working in VS Code, a developer receives a code suggestion from GitHub Copilot Chat. They want to see additional options before accepting. What can they do to explore alternative suggestions?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Use the /regenerate slash command"
+        },
+        {
+          "letter": "B",
+          "text": "Enable autocomplete in GitHub Actions"
+        },
+        {
+          "letter": "C",
+          "text": "Restart the IDE to reload the context"
+        },
+        {
+          "letter": "D",
+          "text": "Use the browser version of GitHub Copilot Chat instead"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n- **Option A is CORRECT** because /regenerate is a valid slash\ncommand in Copilot Chat. It tells the model to try again with a different suggestion\nwhile staying in the same context.\n\n**![](commands.png)**\n\n- **Option B is INCORRECT** as GitHub Actions has no connection to\nCopilot Chat suggestions or IDE-level code generation.\n\n- **Option C is INCORRECT** because restarting the IDE won’t\ngenerate alternative suggestions and is unnecessary for that use case.\n\n- **Option D is INCORRECT** because while GitHub.com Copilot Chat\nexists, the alternative generation functionality is specific to the in-IDE experience.\n\n**Reference:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet#slash-commands](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet#slash-commands)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 24,
+      "domain": "GitHub Copilot plans and features",
+      "text": "You notice Copilot Chat frequently misunderstands your JavaScript prompts. You want to report this to help improve the model. How can you provide direct feedback to GitHub about this behavior?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Submit feedback via the “thumbs down” icon next to the response"
+        },
+        {
+          "letter": "B",
+          "text": "Create a GitHub issue in the Copilot CLI repository"
+        },
+        {
+          "letter": "C",
+          "text": "Send an email to GitHub support directly"
+        },
+        {
+          "letter": "D",
+          "text": "Modify the source code of Copilot Chat and recompile"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n- **Option A is CORRECT** because GitHub Copilot Chat provides\nquick feedback options next to each response. Selecting “thumbs down” prompts a feedback\nform where users can report problems like incorrect responses, bias, or hallucinations.\n\n- **Option B is INCORRECT** because the Copilot CLI repo is not\nmeant for Chat issues — GitHub collects user feedback directly through the Copilot\ninterface.\n\n- **Option C is INCORRECT** because emailing support is not the\nprimary or tracked method for product feedback. It’s better used for account issues.\n\n- **Option D is INCORRECT** because Copilot Chat is not open source\nand cannot be modified or rebuilt by users.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-your-ide](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-your-ide)\n\n- [https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-github](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-github)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 25,
+      "domain": "GitHub Copilot plans and features",
+      "text": "You’re training junior developers on how to get the best results from GitHub Copilot Chat. Which of the following are recommended best practices? (Select two)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Use clear and specific prompts for each coding request"
+        },
+        {
+          "letter": "B",
+          "text": "Always accept the first suggestion provided"
+        },
+        {
+          "letter": "C",
+          "text": "Regularly review Copilot-generated code for correctness and security"
+        },
+        {
+          "letter": "D",
+          "text": "Use Copilot Chat to deploy production services"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "C"
+      ],
+      "explanation": "**Correct Answers: A and C**\n\n- **Option A is CORRECT** because Copilot Chat performs better when\nprompts are concise, clear, and context-specific. Vague prompts can lead to irrelevant\nsuggestions.\n\n- **Option B is INCORRECT** because suggestions should be\ncritically reviewed — even the first one. AI-generated code is not guaranteed to be\ncorrect or secure.\n\n- **Option C is CORRECT** because Copilot does not validate output\nfor logic, syntax, or security. Manual review is essential, especially in collaborative\nor production code.\n\n- **Option D is INCORRECT** because Copilot Chat is not meant for\ndeployment tasks — it is a coding assistant, not a DevOps tool.\n\n**Reference:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot](https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": true
+    },
+    {
+      "number": 26,
+      "domain": "GitHub Copilot plans and features",
+      "text": "A developer wants to quickly summarize a block of code using Copilot Chat. Which slash command should they use to do this?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "/summarize"
+        },
+        {
+          "letter": "B",
+          "text": "/execute"
+        },
+        {
+          "letter": "C",
+          "text": "/fix"
+        },
+        {
+          "letter": "D",
+          "text": "/rewrite"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\nThe /summarize command in Copilot Chat is designed to provide a quick, high-level\nexplanation of a block of code. It helps developers understand the purpose and functionality\nof code snippets, especially when reviewing unfamiliar logic.\n\n- /execute is typically used to run or test code.\n\n- /fix is used to identify and correct issues or bugs in the\ncode.\n\n- /rewrite helps refactor or rephrase the code for better\nreadability or performance.\n\nUsing /summarize enables developers to save time during code reviews, debugging\nsessions, or onboarding into new projects by gaining contextual insight without reading\nevery line in detail.\n\n- **Option A is CORRECT** because /summarize is a valid command\nthat prompts Copilot Chat to generate a concise summary of a code block — perfect for\nonboarding or understanding unfamiliar logic.\n\n- **Option B is INCORRECT** because /execute is not a recognized\nCopilot command — Copilot Chat does not execute code.\n\n- **Option C is INCORRECT** because /fix is used to correct errors\nin code, not summarize it.\n\n- **Option D is INCORRECT** because /rewrite generates alternative\nimplementations — useful for refactoring, not summarizing.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet#slash-commands](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet#slash-commands)\n\n- [https://docs.github.com/en/github-models/use-github-models/storing-prompts-in-github-repositories](https://docs.github.com/en/github-models/use-github-models/storing-prompts-in-github-repositories)\n\n### Domain: GitHub Copilot plans and features",
+      "isMultiSelect": false
+    },
+    {
+      "number": 27,
+      "domain": "GitHub Copilot plans and features",
+      "text": "You’re using GitHub Copilot Chat on GitHub.com and reviewing code in a public repository. Which of the following options are available to work with suggestions provided by Copilot Chat? (Select two)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Copy suggestions directly to your clipboard"
+        },
+        {
+          "letter": "B",
+          "text": "Ask follow-up questions in the same chat thread"
+        },
+        {
+          "letter": "C",
+          "text": "Run suggested code snippets in the browser"
+        },
+        {
+          "letter": "D",
+          "text": "Trigger deployment pipelines from the suggestion window"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "B"
+      ],
+      "explanation": "**Correct Answers: A and B**\n\n- **Option A is CORRECT** because GitHub Copilot Chat lets you copy\ncode suggestions to your clipboard for pasting into your local editor or web-based IDE.\n\n- **Option B is CORRECT** because Copilot Chat on GitHub.com\nsupports conversational follow-ups, allowing developers to refine questions and\nsuggestions within the same context.\n\n- **Option C is INCORRECT** because there is no runtime environment\nin GitHub.com for executing code snippets — Copilot Chat provides suggestions only.\n\n- **Option D is INCORRECT** because deployment features must be\nconfigured via GitHub Actions or CI/CD tools — Copilot Chat cannot trigger workflows\ndirectly.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat)\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github)\n\n### Domain: How GitHub Copilot works and handles data",
+      "isMultiSelect": true
+    },
+    {
+      "number": 28,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "You’re using GitHub Copilot in Visual Studio Code while building a TypeScript project. As you start typing a function, Copilot instantly generates a code suggestion. Which of the following best describes the complete lifecycle of this suggestion?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "User starts typing → Copilot builds a context → LLM generates a suggestion → User accepts or rejects it"
+        },
+        {
+          "letter": "B",
+          "text": "GitHub Copilot scans the entire GitHub repo → Generates a prediction → Auto-inserts code"
+        },
+        {
+          "letter": "C",
+          "text": "User requests help → Copilot uploads the entire project to OpenAI → Suggestion is generated"
+        },
+        {
+          "letter": "D",
+          "text": "GitHub Copilot listens for keystrokes → Picks a random template → Suggests code without understanding"
+        },
+        {
+          "letter": "E",
+          "text": "The user types → GitHub Copilot copies previous similar commits from the repo history and suggests code"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n- **Option A is corrECT** because GitHub Copilot follows a specific\nlifecycle:\n\n- **User initiates input** (typing or comment\nprompt)\n\n- **Context is built **from surrounding code,\nfile name, and cursor position\n\n- A **prompt** is sent to the LLM (hosted on\nAzure/OpenAI) and A **code suggestion is returned**\n\n- The **user chooses** to accept, ignore, or\nedit the suggestion\n\nThis reflects the real-time interaction model Copilot is designed for.\n\n**End-to-end flow **of how GitHub Copilot works:\n\n- As the developer types code or adds a comment, Copilot\ngathers **context **from the nearby code and file.\n\n- This information is **packaged into a prompt\n**and sent to the LLM running on GitHub’s backend (hosted on Azure).\n\n- The **LLM processes the prompt** and returns\na **predicted code suggestion.**\n\n- The developer can then **accept, ignore, or\nmodify** the suggestion.\n\nThis real-time interaction allows Copilot to serve as an assistive, context-aware\ncoding partner.\n\n- **Option B is incorrECT** because Copilot doesn’t analyze your\nentire GitHub repo. It works based on the **current file and code context\n**around the cursor — not a full-repo scan — and never auto-inserts code without\nyour approval.\n\n- **Option C is incorrECT** since Copilot **does not upload\nyour full project** to any external service. It only sends a **trimmed,\nprivacy-respecting prompt** to the backend. Full project uploads would be a\nmassive security and performance issue.\n\n- **Option D is incorrECT** because Copilot doesn’t use random\ntemplates. Its suggestions are **machine-learned predictions** based on\nbillions of code samples, not static snippets or templates.\n\n- **Option E is incorrECT** because Copilot **doesn’t access\nyour Git history**. It doesn’t read your commits or try to replicate past\nchanges. It’s based on general code training data, not repo-specific history.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/get-started/what-is-github-copilot](https://docs.github.com/en/copilot/get-started/what-is-github-copilot)\n\n- [https://devblogs.microsoft.com/all-things-azure/visualize-roi-of-your-github-copilot-usage-how-it-works/](https://devblogs.microsoft.com/all-things-azure/visualize-roi-of-your-github-copilot-usage-how-it-works/)\n\n### Domain: How GitHub Copilot works and handles data",
+      "isMultiSelect": false
+    },
+    {
+      "number": 29,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "When generating code suggestions, what sources of context does GitHub Copilot use to understand what to predict?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Global variables and API keys from your environment"
+        },
+        {
+          "letter": "B",
+          "text": "Complete project history, including commit logs"
+        },
+        {
+          "letter": "C",
+          "text": "File name, programming language, surrounding code, and comments"
+        },
+        {
+          "letter": "D",
+          "text": "GitHub Issues and Pull Requests linked to the repository"
+        },
+        {
+          "letter": "E",
+          "text": "Debug logs and terminal output during execution"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n- **Option C is corrECT** because GitHub Copilot builds its\nunderstanding from:\n\n- The **file name and extension**, which help\ninfer language-specific syntax\n\n- **Code near the cursor**, including previous\nlines and blocks\n\n- **Inline comments**, especially natural\nlanguage prompts\n\nThis context is bundled into a **synthetic prompt** sent to the\nLLM.\n\n- **Option A is incorrECT** because Copilot doesn’t access runtime\nenvironment variables like API keys or env files due to privacy and scope limitations.\n\n- **Option B is incorrect** because it doesn’t use Git logs or\nproject history — it operates in the context of the **open file(s) **and\ncursor state.\n\n- **Option D is incorrECT** as GitHub Copilot doesn’t access GitHub\nIssues/PRs unless you specifically add such text to your code as comments.\n\n- **Option E is incorrect** because Copilot doesn’t read terminal\nlogs or runtime output. It’s not execution-aware, it’s **language-aware.**\n\n**References:**\n\n- [https://docs.github.com/en/copilot/get-started/best-practices-for-using-github-copilot](https://docs.github.com/en/copilot/get-started/best-practices-for-using-github-copilot)\n\n- [https://docs.github.com/en/copilot/concepts/about-organizing-and-sharing-context-with-copilot-spaces](https://docs.github.com/en/copilot/concepts/about-organizing-and-sharing-context-with-copilot-spaces)\n\n### Domain: How GitHub Copilot works and handles data",
+      "isMultiSelect": false
+    },
+    {
+      "number": 30,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "You are writing a Python function with a clear docstring. How does GitHub Copilot use that information to build a prompt for code generation?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It combines your docstring, file name, and code near the cursor into a prompt sent to the LLM"
+        },
+        {
+          "letter": "B",
+          "text": "It translates the docstring into another language and matches a function from Stack Overflow"
+        },
+        {
+          "letter": "C",
+          "text": "It stores your code and searches GitHub for similar public functions"
+        },
+        {
+          "letter": "D",
+          "text": "It compiles the entire file before sending it to the LLM"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n- **Option A is corrECT** because GitHub Copilot builds\n**synthetic prompts** that include:\n\n- Natural language inputs like docstrings or comments\n\n- Programming language and file type\n\n- Local code near the cursor\n\nThis allows the LLM to generate highly relevant suggestions.\n\n- **Option B is incorrECT** because Copilot doesn’t perform\nreal-time translation or search forums. It doesn’t query external sites like Stack\nOverflow.\n\n- **Option C is incorrECT** as Copilot doesn’t access GitHub search\nor public repo APIs in real time. It’s powered by **pretrained data**, not\nlive search.\n\n- **Option D is incorrECT** since the LLM operates on **text\ninput**, not compiled code. Copilot doesn’t compile your file or validate\nruntime behavior before suggesting completions.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/concepts/prompt-engineering-for-copilot-chat](https://docs.github.com/en/copilot/concepts/prompt-engineering-for-copilot-chat)\n\n- [https://docs.github.com/en/copilot/get-started/getting-started-with-prompts-for-copilot-chat](https://docs.github.com/en/copilot/get-started/getting-started-with-prompts-for-copilot-chat)\n\n### Domain: How GitHub Copilot works and handles data",
+      "isMultiSelect": false
+    },
+    {
+      "number": 31,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "What kinds of input does GitHub Copilot Chat understand and process effectively?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Only code snippets and technical keywords"
+        },
+        {
+          "letter": "B",
+          "text": "Purely Git commit messages and PR titles"
+        },
+        {
+          "letter": "C",
+          "text": "Natural language queries, inline comments, and code context"
+        },
+        {
+          "letter": "D",
+          "text": "Only file structure and variable names"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n- **Option C is corrECT** because Copilot Chat is designed to\nprocess:\n\n- **Natural language** prompts (e.g., “Explain\nthis function”)\n\n- **Code context and inline\ncomments**\n\n- Questions about files, functions, and refactoring tasks\n\nIt’s optimized for conversational programming support.\n\n- **Option A is incorrECT** because it’s too narrow. Copilot Chat\nhandles more than just keywords.\n\n- **Option B is incorrECT** because commit messages and PR titles\nare not directly processed unless inserted into the code manually.\n\n- **Option D is incorrECT** because file structure or variable\nnames alone don’t provide enough intent for Copilot Chat to work effectively.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-your-ide](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-your-ide)\n\n- [https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-github](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-github)\n\n### Domain: How GitHub Copilot works and handles data",
+      "isMultiSelect": false
+    },
+    {
+      "number": 32,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "Which statement best reflects how GitHub Copilot Individual handles your private code and suggestion data?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "All code is automatically used to retrain the LLM"
+        },
+        {
+          "letter": "B",
+          "text": "GitHub shares suggestions and private code with OpenAI without consent"
+        },
+        {
+          "letter": "C",
+          "text": "GitHub commits your code history to external servers"
+        },
+        {
+          "letter": "D",
+          "text": "Your data is only used to provide suggestions and shared for training only if telemetry is enabled"
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "explanation": "**Correct Answer: D**\n\n- **Option D is correct because** Copilot Individual uses your code\n**locally** for generating suggestions, and **only shares data with\nGitHub/OpenAI if telemetry is enabled**. You must **explicitly opt\nin** to this during setup or in settings.\n\n- **Option A is incorrect because** your code is **not\nautomatically** used for model training. Copilot **does not use\nyour private code by default** for model updates or retraining.\n\n- **Option B is incorrect** **because** GitHub does\n**not share private data without** **permission.** GitHub does\nnot share your private code or suggestions with OpenAI **without your\nconsent**. Data sharing is always opt-in.\n\n- **Option C is incorrect** **because** Copilot\ndoesn’t push your repo or codebase anywhere automatically. Your project code is never\nauto-committed or sent to external servers unless you push it yourself. Copilot doesn’t\nsync code externally.\n\n**Reference:**\n\n- [https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)\n\n### Domain: How GitHub Copilot works and handles data",
+      "isMultiSelect": false
+    },
+    {
+      "number": 33,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "Which of the following are known limitations of GitHub Copilot and large language models (LLMs) in real-world programming? (Select 3)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Copilot may generate insecure code or introduce vulnerabilities"
+        },
+        {
+          "letter": "B",
+          "text": "Copilot always understands business logic from natural language prompts"
+        },
+        {
+          "letter": "C",
+          "text": "Copilot can hallucinate functions or APIs that don’t exist"
+        },
+        {
+          "letter": "D",
+          "text": "Copilot automatically tests and validates its suggestions before presenting them"
+        },
+        {
+          "letter": "E",
+          "text": "Copilot can produce syntactically correct but logically flawed code"
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "C",
+        "E"
+      ],
+      "explanation": "**Correct Answers: A, C and E**\n\n- **Option A is correct** **because:** GitHub Copilot\ncan unintentionally produce code with **insecure patterns**, such as\nhardcoded credentials or unsafe database queries. Since it does not validate security,\nthis is a real concern, especially for production systems.\n\n- **Option B is incorrect because** Copilot is **not capable\nof fully understanding complex business logic **just from vague or short\nnatural language prompts. It relies on the clarity of your prompt and coding context —\nnot true comprehension.\n\n- **Option C is correct because:** one of the major limitations is\n**hallucination,** where Copilot suggests functions or libraries that look\nreal but **do not actually exist **in any framework or SDK. This happens\ndue to the predictive nature of LLMs.\n\n- **Option D is incorrect because** Copilot doesn’t have any\ntesting mechanism or execution engine. It **doesn’t validate** whether the\ngenerated code will compile, pass unit tests, or work logically — it’s your job to\nverify.\n\n- **Option E is correct because:** Copilot can generate code that\nlooks perfect syntactically, but has **logical flaws or incorrect\nassumptions**, especially in edge cases or complex workflows. This is common\nin AI-generated code and must be reviewed carefully.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-github](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-github)\n\n- [https://docs.github.com/en/copilot/concepts/copilot-billing/about-individual-copilot-plans-and-benefits](https://docs.github.com/en/copilot/concepts/copilot-billing/about-individual-copilot-plans-and-benefits)\n\n### Domain: How GitHub Copilot works and handles data",
+      "isMultiSelect": true
+    },
+    {
+      "number": 34,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "Which of the following best explain how GitHub Copilot handles reasoning and calculations? (Select 3)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Copilot uses symbolic logic to perform step-by-step math calculations accurately"
+        },
+        {
+          "letter": "B",
+          "text": "Copilot excels at language-based reasoning and summarizing code intent"
+        },
+        {
+          "letter": "C",
+          "text": "Copilot is limited in performing accurate arithmetic or algorithmic calculations"
+        },
+        {
+          "letter": "D",
+          "text": "Copilot predicts the next token based on patterns, not based on actual computation"
+        },
+        {
+          "letter": "E",
+          "text": "Copilot uses external APIs to resolve mathematical expressions before suggesting answers"
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "**Correct Answers: B, C and D**\n\n- **Option A is incorrect.** Copilot does **not perform\nsymbolic logic or step-by-step calculations** like a math engine. It’s an\nLLM, not a calculator or theorem solver.\n\n- **Option B is correct.** Copilot’s strength lies in**\nlanguage-based reasoning.** It can interpret the **intent of a\nfunction**, rename variables meaningfully, and summarize what a code block\ndoes — especially helpful during code reviews or documentation.\n\n- **Option C is correct.** LLMs like Copilot are **not\nreliable for math-heavy or precision-based tasks.** They might generate\nincorrect formulas, skip edge conditions, or fail in floating point math scenarios.\n\n- **Option D is correct. **Copilot **does not\ncalculate**; it **predicts tokens** based on training data\npatterns. For example, it might suggest “n = n + 1” because that’s commonly seen after\nloops — not because it understands increment logic.\n\n- **Option E is incorrect**. Copilot does **not fetch live\ndata** or call APIs to resolve values. It is a **stateless predictor,\n**with no execution or real-time computation capabilities.\n\n**Reference:**\n\n- [https://docs.github.com/en/copilot/reference/ai-models/choosing-the-right-ai-model-for-your-task](https://docs.github.com/en/copilot/reference/ai-models/choosing-the-right-ai-model-for-your-task)\n\n### Domain: How GitHub Copilot works and handles data",
+      "isMultiSelect": true
+    },
+    {
+      "number": 35,
+      "domain": "How GitHub Copilot works and handles data",
+      "text": "Which of the following statements are true regarding how GitHub Copilot Individual uses and shares user data? (Select TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Copilot Individual uses user code to retrain the model by default"
+        },
+        {
+          "letter": "B",
+          "text": "Copilot may collect telemetry data if the user consents"
+        },
+        {
+          "letter": "C",
+          "text": "Copilot never shares any suggestion or usage data with GitHub"
+        },
+        {
+          "letter": "D",
+          "text": "Users can opt out of sharing code snippets used for improving suggestions"
+        },
+        {
+          "letter": "E",
+          "text": "Copilot suggestions are generated locally without contacting external servers"
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D"
+      ],
+      "explanation": "**Correct Answers: B and D**\n\n- **Option A is incorrect.** By default, GitHub Copilot\n**does not use user code to retrain models**. Model improvement only\nhappens if users **explicitly opt in** to telemetry collection that\ncontributes to product improvement.\n\n- **Option B is correct.** GitHub may **collect telemetry\ndata**, such as accepted/rejected suggestions, if the user consents during\nsetup or via settings. This helps improve the quality of future suggestions.\n\n- **Option C is incorrect.** Some suggestion metadata **may\nbe shared** with GitHub **if the user has allowed it. **Saying\n“never” is incorrect and it’s **configurable.**\n\n- **Option D is correct.** Users have full control and can\n**opt out of data sharing **through Copilot settings in their IDE (e.g., VS\nCode or JetBrains). This ensures their code is kept private.\n\n- **Option E is incorrect. **Copilot suggestions are\n**generated via remote LLMs **(e.g., on Azure/OpenAI), so the IDE\n**contacts external servers** when generating completions. It’s not a fully\nlocal model.\n\n**Reference:**\n\n- [https://github.net.cn/zh/copilot/overview-of-github-copilot/about-github-copilot-individual#:~:text=How%20is%20the%20data%20in,conduct%20product%20and%20academic%20research](https://github.net.cn/zh/copilot/overview-of-github-copilot/about-github-copilot-individual#:~:text=How%20is%20the%20data%20in,conduct%20product%20and%20academic%20research).\n\n### Domain: Testing with GitHub Copilot",
+      "isMultiSelect": true
+    },
+    {
+      "number": 36,
+      "domain": "Testing with GitHub Copilot",
+      "text": "You are working on a backend application and want to write unit tests for a newly developed function. Your team is using GitHub Copilot Chat to speed up development and improve test coverage. You want to understand how GitHub Copilot Chat can assist in generating effective unit test cases during development. What is the primary benefit of using GitHub Copilot Chat for writing unit tests?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It provides test code snippets based on your existing functions, suggests inputs, expected outputs, and assertions, and even helps identify boundary and edge cases"
+        },
+        {
+          "letter": "B",
+          "text": "It manually writes all test cases without requiring any user input or context"
+        },
+        {
+          "letter": "C",
+          "text": "It only proposes possible input and output combinations but doesn’t write full test cases"
+        },
+        {
+          "letter": "D",
+          "text": "It executes all unit tests automatically and provides real-time test results"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n**Option A is CORRECT because:**\n\nGitHub Copilot Chat helps developers write better unit tests by analyzing the\nexisting function logic and generating complete test case code snippets, including:\n\n- Input parameters\n\n- Expected outputs\n\n- Assertion logic\n\nIt can also highlight edge cases (like null inputs, max/min values) and suggest\ntest variations. This significantly improves test coverage and speeds up the testing\nprocess.\n\n**Option B is incorrect because**: Copilot Chat does not operate\nautonomously to write tests without input. It works alongside developers, requiring context\nlike function signatures or prompts to generate relevant tests.\n\n**Option C is incorrect because**: While Copilot can suggest inputs\nand outputs, it goes beyond that, it provides complete test case code including logic\nand assertions. So, this option understates its capabilities.\n\n**Option D is incorrect because:\n**Copilot Chat is a code generation tool, not a test runner. It doesn’t\nexecute test cases or return real-time test results, that’s the role of tools like JUnit,\npytest, or MSTest.\n\nHere’s a simplified interaction flow between the developer, Copilot Chat, and the\nunit testing framework.\n\n**References:**\n\n- [https://docs.github.com/en/copilot/tutorials/writing-tests-with-github-copilot](https://docs.github.com/en/copilot/tutorials/writing-tests-with-github-copilot)\n\n- [https://docs.github.com/en/copilot/how-tos/chat](https://docs.github.com/en/copilot/how-tos/chat)\n\n- [https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-your-ide](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-your-ide)\n\n### Domain: Testing with GitHub Copilot",
+      "isMultiSelect": false
+    },
+    {
+      "number": 37,
+      "domain": "Testing with GitHub Copilot",
+      "text": "You are working on a project in Visual Studio Code (VS Code) and want to manage your unit tests efficiently. You’ve installed a test framework extension (e.g., Jest, Mocha, Pytest) and now want to view, run, debug, and manage your test cases from a centralized UI. Which built-in feature of Visual Studio Code provides this functionality?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "To write new code snippets for unit tests"
+        },
+        {
+          "letter": "B",
+          "text": "To run and debug unit tests, view the results of test runs, and manage test cases in the workspace"
+        },
+        {
+          "letter": "C",
+          "text": "To generate test cases based on the code context"
+        },
+        {
+          "letter": "D",
+          "text": "To automatically fix failing tests"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n**Option B is CORRECT because:**\n\nThe Test Explorer in Visual Studio Code is a dedicated panel that helps developers:\n\n- **Discover test cases\n**in the current workspace\n\n- **Run or debug individual tests or entire test\nsuites**\n\n- **View pass/fail\nstatus**, output logs, and errors\n\n- **Manage test\nfiles** and integrations with test frameworks like Jest, Mocha,\nNUnit, Pytest, etc.\n\nThis centralized approach streamlines testing workflows inside the editor without\nneeding command-line execution.\n\n**Option A is incorrect\nbecause**: Test Explorer does not help write new unit tests. Writing\ntests still requires developer input or assistance from AI/code-generation tools like GitHub\nCopilot. Test Explorer’s role is execution and test result visualization.\n\n**Option C is incorrect because:\n**While tools like GitHub Copilot Chat or extensions may generate tests\nbased on code, Test Explorer does not offer code generation features. It simply manages and\nruns existing tests.\n\n**Option D is incorrect\nbecause:** Test Explorer does not fix failing tests automatically.\nDevelopers must analyze the failure, modify test logic or source code, and re-run tests.\nThere is no automated remediation built into Test Explorer.\n\n**References:**\n\n- [Run unit tests by using Test Explorer](https://learn.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2022)\n\n- [Python testing in Visual Studio Code](https://code.visualstudio.com/docs/python/testing)\n\n- [Debug and analyze unit tests by using Test Explorer](https://learn.microsoft.com/en-us/visualstudio/test/debug-unit-tests-with-test-explorer?view=vs-2022)\n\n### Domain: Privacy fundamentals and content exclusions",
+      "isMultiSelect": false
+    },
+    {
+      "number": 38,
+      "domain": "Privacy fundamentals and content exclusions",
+      "text": "You are reviewing unit testing best practices and want to ensure that functions handle input validation effectively. What is the primary purpose of generating assertions related to function input parameters?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "To enhance the performance of the function"
+        },
+        {
+          "letter": "B",
+          "text": "To prevent invalid data from being processed by the function"
+        },
+        {
+          "letter": "C",
+          "text": "To check if the function returns the expected output"
+        },
+        {
+          "letter": "D",
+          "text": "To document the function’s expected inputs"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n**Option B: To prevent invalid data from being\nprocessed by the function is CORRECT because**: Assertions used for\ninput parameter validation ensure that the function receives only acceptable, expected\nvalues. This guards against improper use, logical errors, and unexpected behavior —\nparticularly important in robust unit testing. Assertions act as a defensive programming\nmechanism that stops execution if invalid inputs are detected, maintaining application\nstability.\n\n**Option A: To enhance the performance of the\nfunction is incorrect because:** Assertions do not enhance\nperformance. In fact, they may slightly decrease it due to the additional runtime checks.\nTheir purpose is validity checking, not performance optimization.\n\n**Option C: To check if the function returns\nthe expected output is incorrect because:** Checking the output of a\nfunction is a part of unit test assertions, but input parameter assertions serve a different\npurpose — validating data before it’s processed, not after.\n\n**Option D: To document the function’s expected\ninputs is incorrect because:** While assertions may help clarify\nexpected inputs to developers, their primary goal is enforcement, not documentation. Proper\ndocumentation should be handled separately through comments or docstrings.\n\n**References:**\n\n- [Python assert statement – Real Python](https://realpython.com/python-assert-statement/)\n\n- [Best practices in unit testing – Microsoft Docs](https://learn.microsoft.com/en-us/visualstudio/test/unit-test-basics)\n\n### Domain: Prompt Crafting and Prompt Engineering",
+      "isMultiSelect": false
+    },
+    {
+      "number": 39,
+      "domain": "Prompt Crafting and Prompt Engineering",
+      "text": "You are learning how to write effective prompts for GitHub Copilot to get high-quality code suggestions. While most prompt engineering principles improve Copilot’s response accuracy, one of the following is NOT considered a principle of effective prompt engineering.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Clarity: Focus on a single, well-defined task"
+        },
+        {
+          "letter": "B",
+          "text": "Verbosity: Provide extensive and detailed descriptions"
+        },
+        {
+          "letter": "C",
+          "text": "Specificity: Use clear and explicit instructions"
+        },
+        {
+          "letter": "D",
+          "text": "Surround: Utilize descriptive filenames and keep related files open"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n**Option B is CORRECT: **While\nproviding some context is helpful, verbosity — i.e., overly lengthy and overly detailed\nprompts — can confuse Copilot and lead to less relevant code suggestions. The goal is to be\nclear, concise, and specific, not verbose. Long-winded prompts without focus degrade model\nperformance.\n\n**Option A is incorrect because: Clarity\n**is a core principle of effective prompt engineering. Asking a Copilot to\ndo one specific task at a time yields better results. Vague or overloaded prompts can result\nin incomplete or incorrect code.\n\n**Option C is incorrect because: Specificity\n**helps narrow down Copilot’s response. When prompts include explicit\ninput/output structures or function goals, Copilot provides more accurate and relevant code.\n\n**Option D is incorrect because: Surround\ncontext** (like open related files and meaningful filenames) enhances\nthe model’s ability to understand the development environment. GitHub Copilot uses the full\ncontext from your workspace to inform code completions.\n\n**References:**\n\n- [GitHub Copilot Prompt Engineering Best Practices – GitHub Docs](https://docs.github.com/en/copilot/getting-started-with-github-copilot/using-github-copilot-effectively)\n\n- [Prompt Engineering Guide](https://www.promptingguide.ai/introduction/prompt-engineering)\n\n### Domain: Developer use cases for AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 40,
+      "domain": "Developer use cases for AI",
+      "text": "As a developer contributing to a cross-functional team, you’re asked to maintain project documentation. What is the main goal of project documentation in a software development lifecycle?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "To deliver technical implementation details meant solely for the backend developers"
+        },
+        {
+          "letter": "B",
+          "text": "To summarize the project features for end-users in a marketing document"
+        },
+        {
+          "letter": "C",
+          "text": "To communicate the purpose, boundaries, and key decisions about the project to all stakeholders"
+        },
+        {
+          "letter": "D",
+          "text": "To record commit timestamps and development milestones across sprints"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n**Option C is correct because:**\nProject documentation plays a critical role in providing clarity on why the project exists,\nwhat its goals are, who it serves, and what functional and non-functional requirements it\nincludes. It acts as a bridge between team members (devs, testers, PMs), stakeholders, and\nfuture maintainers. Good documentation captures scope, purpose, and design rationale, which\nis key to alignment across teams.\n\n**Option A is incorrect\nbecause**: This focuses only on low-level implementation details,\noften found in code comments or internal dev wikis. Project documentation should serve\nbroader communication, not just backend devs.\n\n**Option B is incorrect\nbecause:** Summarizing features for users is part of marketing or user\nmanuals, not internal project documentation. It targets a different audience and doesn’t\nexplain the development-side purpose.\n\n**Option D is incorrect\nbecause:** Tracking commit history is a function of version control\ntools like Git—not the core role of project documentation. Development history is useful but\nnot the primary purpose of documentation.\n\n**Reference:**\n\n- [Responsible use of GitHub Copilot Chat in your IDE](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-your-ide)\n\n### Domain: Developer use cases for AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 41,
+      "domain": "Developer use cases for AI",
+      "text": "You’re collaborating on a large development project and want to ensure your code is easy for other team members to understand and maintain. What is the key benefit of writing inline code documentation?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It makes the code more challenging for others to interpret"
+        },
+        {
+          "letter": "B",
+          "text": "It improves readability and maintainability, helping developers quickly understand the logic"
+        },
+        {
+          "letter": "C",
+          "text": "It inflates the codebase unnecessarily"
+        },
+        {
+          "letter": "D",
+          "text": "It demonstrates advanced syntax and complexity in the developer’s skills"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n**Option B: It improves readability and\nmaintainability is correct because**: Inline documentation helps\ndevelopers understand what each section of the code does without needing to reverse-engineer\nthe logic. This makes onboarding new developers easier and supports long-term codebase\nmaintenance.Clarity and maintainability are key principles in professional software\ndevelopment, especially when multiple contributors are involved.\n\n**Option A: It makes the code more challenging\nand is incorrect because** inline documentation is meant to clarify,\nnot confuse. Making code harder to understand defeats its purpose.\n\n**Option C: Inflates the codebase is incorrect\nbecause** documentation adds negligible size to the codebase and\nserves functional value for understanding, not redundancy.\n\n**Option D: Demonstrating advanced skills is\nincorrect because** inline docs are about communication, not\nshowcasing complex code. Clarity > cleverness in production environments.\n\n**Reference:**\n\n- [Tools and techniques for effective code documentation](https://github.com/resources/articles/software-development/tools-and-techniques-for-effective-code-documentation)\n\n### Domain: Developer use cases for AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 42,
+      "domain": "Developer use cases for AI",
+      "text": "A developer is writing a function in Visual Studio Code. GitHub Copilot begins suggesting code completions based on the current input. How does GitHub Copilot decide which suggestions to generate?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It uses a random selection from common coding patterns"
+        },
+        {
+          "letter": "B",
+          "text": "It considers the programming language used, regardless of context"
+        },
+        {
+          "letter": "C",
+          "text": "It bases suggestions on the current context and code written in the editor"
+        },
+        {
+          "letter": "D",
+          "text": "It evaluates how long the current code snippet is"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n**Option C is CORRECT because:**\nGitHub Copilot analyzes the surrounding code, function names, comments, file names, and\nrelated files to understand your intent. It uses this context to offer relevant and accurate\nsuggestions. Copilot is context-aware — meaning it doesn’t just offer boilerplate snippets\nbut intelligently aligns with what you’re building.\n\n**Option A is incorrect\nbecause:** Copilot is not random — it uses trained models and applies\nprobability based on context, not generic patterns.\n\n**Option B is incorrect\nbecause:** While the programming language influences formatting,\nsuggestions depend more on the code context than language alone.\n\n**Option D is incorrect\nbecause:** Length of the code snippet is not a primary factor in\ngenerating suggestions semantic and syntactic context are more important.\n\n**References:**\n\n- [Understanding the Contextual Scope of GitHub Copilotzz](https://github.com/orgs/community/discussions/69280)\n\n- [How to maximise the Copilot's context awareness? #51323](https://github.com/orgs/community/discussions/51323)\n\n- [Getting code suggestions in your IDE with GitHub Copilot](https://docs.github.com/enterprise-cloud@latest/copilot/using-github-copilot/using-github-copilot-code-suggestions-in-your-editor)\n\n### Domain: Developer use cases for AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 43,
+      "domain": "Developer use cases for AI",
+      "text": "You are working in Visual Studio Code with GitHub Copilot enabled. While typing a function, Copilot generates multiple suggestions to complete your code block.As a developer, how can you review these options and select the most appropriate one?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Copilot adds all suggestions to the editor automatically"
+        },
+        {
+          "letter": "B",
+          "text": "Only the top suggestion is preserved, and the rest are discarded"
+        },
+        {
+          "letter": "C",
+          "text": "Copilot benchmarks each suggestion and inserts the best-performing one based on test runs"
+        },
+        {
+          "letter": "D",
+          "text": "You can use arrow keys or tab navigation to browse through and pick your preferred suggestion"
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "explanation": "**Correct Answer: D**\n\n**Option D is CORRECT because\n**GitHub Copilot in VS Code provides multiple suggestions when a function\nor block of code is being written. Users can scroll through these suggestions using arrow\nkeys (← / →) or shortcuts like Ctrl + ] / [ to view and choose among them. This interactive\nbrowsing ensures that developers retain control and can select the most fitting completion\nfor their logic or coding style.\n\n**Option A is incorrect\nbecause:** Copilot never bulk-inserts all generated suggestions. It\nprovides one suggestion at a time and awaits user input to cycle or accept — maintaining a\nclean and manageable code editor.\n\n**Option B is incorrect because:\n**Suggestions are not discarded automatically. Developers can browse\nthrough them; nothing is lost unless they skip or cancel the suggestion manually.\n\n**Option D is incorrect\nbecause:** Copilot does not execute or benchmark suggestions. It\nrelies on probabilistic language modeling and contextual inference, not runtime performance,\nto rank its outputs.\n\n**References:**\n\n- [Getting code suggestions in your IDE with GitHub Copilot](https://docs.github.com/en/copilot/how-tos/completions/getting-code-suggestions-in-your-ide-with-github-copilot)\n\n- [Code completions with GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/ai-powered-suggestions)\n\n### Domain: Developer use cases for AI",
+      "isMultiSelect": false
+    },
+    {
+      "number": 44,
+      "domain": "Developer use cases for AI",
+      "text": "An enterprise uses GitHub Copilot in a private repo setting. How can Copilot enhance productivity and align with company-specific standards?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It adapts to internal best practices and policies to provide contextual suggestions and coding help"
+        },
+        {
+          "letter": "B",
+          "text": "It generates suggestions solely from public repositories"
+        },
+        {
+          "letter": "C",
+          "text": "It provides random snippets of code to speed up development"
+        },
+        {
+          "letter": "D",
+          "text": "It avoids using the organization’s codebase to maintain privacy"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n**Option A is CORRECT:** GitHub\nCopilot for Business or Enterprise can incorporate your organization’s codebase to provide\nsuggestions aligned with your standards, libraries, and naming conventions. This enhances\ncollaboration, reduces rework, and ensures adherence to internal coding practices.\n\n**Option A is incorrect because:\n**Copilot does use public data, but in organizational settings, it also\nlearns from your private code (without training on it directly, for security).\n\n**Option C is incorrect\nbecause:** Copilot is not random — its model is contextually driven.\n\n**Option D is incorrect\nbecause:** While respecting privacy, Copilot can still use the\norganization’s environment to provide suggestions — especially with Copilot for Business and\nCopilot Chat for Teams.\n\n**References:**\n\n- [GitHub Copilot · Your AI pair programmer](https://github.com/features/copilot)\n\n- [GitHub Copilot Business](https://github.com/features/copilot/copilot-business)\n\n### Domain: Prompt Crafting and Prompt Engineering",
+      "isMultiSelect": false
+    },
+    {
+      "number": 45,
+      "domain": "Prompt Crafting and Prompt Engineering",
+      "text": "You’re building an AI assistant that classifies user requests using large language models (LLMs). You are evaluating the use of zero-shot and few-shot prompting. Which of the following statements accurately reflect key differences between zero-shot and few-shot learning? (Select two options)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Zero-shot prompting is better suited for models that have not been fine-tuned"
+        },
+        {
+          "letter": "B",
+          "text": "Few-shot prompting introduces more tokens, potentially increasing cost and latency"
+        },
+        {
+          "letter": "C",
+          "text": "Zero-shot prompting uses labeled examples to guide the model toward specific outputs"
+        },
+        {
+          "letter": "D",
+          "text": "Few-shot prompting allows the model to learn from examples and improve response relevance"
+        },
+        {
+          "letter": "E",
+          "text": "Few-shot prompting does not affect the model’s context or performance"
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D"
+      ],
+      "explanation": "**Correct Answers: B and D**\n\n**Option B is CORRECT because**:\nFew-shot learning involves providing multiple examples in the prompt, which increases the\nnumber of tokens processed. This leads to higher computation, latency, and cost especially\nin production environments.\n\n**Option D is CORRECT because:** Few-shot\nprompting improves the relevance of model responses by demonstrating how the task should be\nperformed. The model learns patterns from the provided examples, enhancing accuracy for\nsimilar tasks.\n\n![](comparison.png)\n\n**Option A is INCORRECT\nbecause:** Zero-shot prompting works well after a model has been\nfine-tuned. For models that aren’t tuned, few-shot examples are often needed to guide the\nmodel properly.\n\n**When applicable:** Few-shot learning\nis often necessary when fine-tuning has not been performed and you want the model to\nmimic specific behaviors.\n\n**Option C is INCORRECT because:\n**Zero-shot learning does not use labeled examples. Instead, it relies\nentirely on instructions and the model’s pre-trained knowledge to infer the correct\nresponse.\n\n**When applicable:** Few-shot learning\nis the correct approach when labeled examples are used.\n\n**Option E is INCORRECT\nbecause**: Few-shot prompting does impact the model’s context window\nand may influence performance by shaping expectations through repeated examples.\n\n**When applicable:** If only minimal\ncontext is needed, zero-shot might be preferred to preserve token space and cost.\n\n**References:**\n\n- [https://learn.microsoft.com/en-us/dotnet/ai/conceptual/zero-shot-learning](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/zero-shot-learning)\n\n- [https://github.com/openai/openai-cookbook](https://github.com/openai/openai-cookbook)\n\n### Domain: Testing with GitHub Copilot",
+      "isMultiSelect": true
+    },
+    {
+      "number": 46,
+      "domain": "Testing with GitHub Copilot",
+      "text": "You are reviewing a unit test written by a team member. The test is clearly divided into three sections: Setting up the test environment, Calling the method under test, Verifying the results. What is the main purpose of using the Arrange-Act-Assert (AAA) pattern in unit testing?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It helps define the order of code execution in the application logic"
+        },
+        {
+          "letter": "B",
+          "text": "It serves as a format for auto-generating test documentation"
+        },
+        {
+          "letter": "C",
+          "text": "It determines how tests are built and executed by the test runner"
+        },
+        {
+          "letter": "D",
+          "text": "It separates unit tests into clear steps: setup, execution, and result verification"
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "explanation": "**Correct Answer: D**\n\n**Option D is CORRECT because:**\nThe **AAA pattern **is a widely accepted standard\nfor writing clean and understandable unit tests.\n\n- **Arrange** sets up the test inputs and\nenvironment\n\n- **Act**\nperforms the operation being tested\n\n- **Assert** verifies that the result matches\nthe expectation\n\nThis pattern promotes test clarity, readability, and maintainability.\n\n**Option A is incorrect because:\n**This structure is used within tests, not the main application code. The\nAAA structure has no direct relation to production code organization.\n\n**Option B is incorrect\nbecause**: While well-structured tests aid readability, the AAA format\nis not meant to generate documentation but to clarify test flow.\n\n**Option C is incorrect because:\n**Compilation and execution are handled by the test framework (like Jest,\nxUnit, or PyTest), not by the AAA structure. AAA is about structuring logic, not running it.\n\n**Reference:**\n\n- [Unit test basics](https://learn.microsoft.com/en-us/visualstudio/test/unit-test-basics?view=vs-2022#write-your-tests)\n\n### Domain: Prompt Crafting and Prompt Engineering",
+      "isMultiSelect": false
+    },
+    {
+      "number": 47,
+      "domain": "Prompt Crafting and Prompt Engineering",
+      "text": "A developer is curious about how GitHub Copilot understands their code prompts and produces accurate code suggestions. What mechanism allows Copilot to provide contextually relevant responses?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It depends solely on the data it was trained on, without incorporating user-specific context"
+        },
+        {
+          "letter": "B",
+          "text": "It applies methods like zero-shot, one-shot, and few-shot prompting to generate relevant suggestions"
+        },
+        {
+          "letter": "C",
+          "text": "It needs manual fine-tuning for every new task to perform effectively"
+        },
+        {
+          "letter": "D",
+          "text": "It is unable to adjust its responses based on user behavior or input context"
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "explanation": "**Correct Answer: B**\n\n**Option B is CORRECT because:\n**GitHub Copilot leverages advanced AI techniques such as:\n\n-\n**Zero-shot\nlearning**: Copilot makes educated guesses even if it hasn’t\nseen similar examples during training.\n\n-\n**One-shot and\nfew-shot learning:** A single or small number of examples help\nguide Copilot’s behavior.\n\nThese methods allow Copilot to adapt dynamically\nbased on your prompt’s context, enhancing relevance and productivity.\n\n**Option A is incorrect because:\n**While pre-trained models form the base, Copilot does not solely rely on\nstatic data. It uses active prompt context for better results.\n\n**Option C is incorrect\nbecause:**Manual retraining is not required. Copilot is designed for\nout-of-the-box usability across tasks with no custom training needed.\n\n**Option D is incorrect because:\n**Copilot’s suggestions change based on prompt structure and coding\ncontext, making it adaptive and context-sensitive — not static.\n\n**References:**\n\n- [Zero-shot and few-shot learning](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/zero-shot-learning)\n\n- [Best practices for using GitHub Copilot](https://docs.github.com/en/copilot/get-started/best-practices-for-using-github-copilot)\n\n### Domain: Testing with GitHub Copilot",
+      "isMultiSelect": false
+    },
+    {
+      "number": 48,
+      "domain": "Testing with GitHub Copilot",
+      "text": "Your team lead wants to enforce consistent usage of GitHub Copilot across the development team within your GitHub organization. Which of the following options allow administrators to control how Copilot suggestions work across repositories?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Enforce Copilot policies via organization-level configuration"
+        },
+        {
+          "letter": "B",
+          "text": "Limit suggestions only to open-source repositories"
+        },
+        {
+          "letter": "C",
+          "text": "Allow users to control organization-wide Copilot settings"
+        },
+        {
+          "letter": "D",
+          "text": "Configure Copilot via repository secrets in .env files"
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "explanation": "**Correct Answer: A**\n\n**Option A is CORRECT because:\n**GitHub allows organization administrators to centrally manage how\nCopilot is used across teams. They can enable or disable Copilot at the organization or\nrepository level, and also configure policies related to telemetry, code suggestions, and\npublic code matching.\n\n**Option B is incorrect\nbecause:** Copilot can work with both open-source and private\nrepositories. Limiting suggestions to open-source repositories is not a configuration option\nat the org level.\n\n**Option C is incorrect\nbecause:** Only organization admins can manage org-wide settings.\nIndividual users cannot override those policies at the org level.\n\n**Option D is incorrect\nbecause:** Copilot settings are not configured via environment files\nor secrets — they’re managed via the GitHub Admin Console or Policies.\n\n**References:**\n\n- [Managing access to GitHub Copilot in your organization](https://docs.github.com/en/copilot/how-tos/administer/organizations/managing-access-to-github-copilot-in-your-organization)\n\n- [Managing requests for Copilot Business in your organization](https://docs.github.com/en/copilot/how-tos/administer/organizations/managing-access-to-github-copilot-in-your-organization/managing-requests-for-copilot-business-in-your-organization)\n\n### Domain: Privacy fundamentals and content exclusions",
+      "isMultiSelect": false
+    },
+    {
+      "number": 49,
+      "domain": "Privacy fundamentals and content exclusions",
+      "text": "You want to generate a boilerplate unit test for a new function using GitHub Copilot. How can you prompt Copilot to suggest a valid test stub aligned with best practices?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Use keyboard shortcuts without writing any code context"
+        },
+        {
+          "letter": "B",
+          "text": "Paste code from another project"
+        },
+        {
+          "letter": "C",
+          "text": "Write a comment that starts with “// Generate test for…”"
+        },
+        {
+          "letter": "D",
+          "text": "Include irrelevant function names to confuse the model"
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "explanation": "**Correct Answer: C**\n\n**Option C is CORRECT because:\n**GitHub Copilot responds well to natural language comments. Writing a\ncomment like // Write unit test for addNumbers() helps trigger boilerplate code generation,\nincluding Arrange, Act, and Assert blocks, as per industry best practices.\n\n**Option A is incorrect because:\n**Copilot heavily depends on code context. Just triggering keyboard\nshortcuts won’t provide relevant suggestions unless context is present.\n\n**Option B is incorrect\nbecause**: Copy-pasting unrelated code from other projects may mislead\nthe model or generate irrelevant suggestions.\n\n**Option D is incorrect because:\n**Providing unclear or misleading names will confuse the model and degrade\noutput quality.\n\n**References:**\n\n- [How to generate unit tests with GitHub Copilot](https://github.blog/ai-and-ml/github-copilot/how-to-generate-unit-tests-with-github-copilot-tips-and-examples/)\n\n- [Writing tests with GitHub Copilot](https://docs.github.com/en/copilot/tutorials/writing-tests-with-github-copilot)\n\n### Domain: Privacy fundamentals and content exclusions",
+      "isMultiSelect": false
+    },
+    {
+      "number": 50,
+      "domain": "Privacy fundamentals and content exclusions",
+      "text": "Sometimes GitHub Copilot may not offer suggestions or may return irrelevant code. What should a developer do in such scenarios to improve suggestion quality?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Avoid adding comments or filenames"
+        },
+        {
+          "letter": "B",
+          "text": "Close the editor and restart GitHub"
+        },
+        {
+          "letter": "C",
+          "text": "Ignore Copilot and write code manually"
+        },
+        {
+          "letter": "D",
+          "text": "Add inline comments that describe the task explicitly"
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "explanation": "**Correct Answer: D**\n\n**Option D is CORRECT because**:\nWhen Copilot fails to provide helpful completions, refining the prompt with explicit inline\ncomments can significantly improve the relevance. Clear instructions like // return all\nusers who joined in the last 30 days help guide the model.\n\n**Option B is incorrect\nbecause**: Restarting GitHub or the editor won’t fix context ambiguity\nor vague prompts.\n\n**Option C is incorrect\nbecause:** Ignoring Copilot misses the opportunity to refine and guide\nthe model, which is one of its strengths.\n\n**Option D is incorrect\nbecause:** Omitting context (comments, filenames, etc.) reduces\nCopilot’s understanding of intent, lowering suggestion quality.\n\n**References:**\n\n- [https://github.com/orgs/community/discussions/152274](https://github.com/orgs/community/discussions/152274)\n\n- [https://docs.github.com/en/copilot/how-tos/completions/getting-code-suggestions-in-your-ide-with-github-copilot](https://docs.github.com/en/copilot/how-tos/completions/getting-code-suggestions-in-your-ide-with-github-copilot)\n\n- [https://docs.github.com/en/copilot/using-github-copilot#improving-copilots-suggestions](https://docs.github.com/en/copilot/using-github-copilot#improving-copilots-suggestions)",
+      "isMultiSelect": false
+    }
+  ],
+  "domains": [
+    "Developer use cases for AI",
+    "GitHub Copilot plans and features",
+    "How GitHub Copilot works and handles data",
+    "Privacy fundamentals and content exclusions",
+    "Prompt Crafting and Prompt Engineering",
+    "Responsible AI",
+    "Testing with GitHub Copilot"
+  ],
+  "passingScore": 36,
+  "timeLimit": 100
+}
