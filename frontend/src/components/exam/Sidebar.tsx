@@ -39,9 +39,9 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="w-80 border-r bg-white dark:bg-gray-800 flex flex-col h-screen">
+    <aside className="flex h-screen w-80 flex-col border-r bg-white dark:bg-gray-800">
       {/* Progress Overview */}
-      <div className="p-6 border-b flex-shrink-0">
+      <div className="flex-shrink-0 border-b p-6">
         <div className="mb-2 flex items-center justify-between">
           <span className="font-semibold">Overall Progress</span>
           <span className="text-sm text-gray-600 dark:text-gray-400">
@@ -55,7 +55,7 @@ export default function Sidebar() {
       </div>
 
       {/* Scrollable content */}
-      <div className="flex-1 overflow-y-auto p-6">
+      <div className="flex-1 overflow-y-auto p-6 pb-8 scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-300 dark:scrollbar-track-gray-900 dark:scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-500">
         {/* Legend */}
         <div className="mb-6 space-y-2 rounded-lg bg-gray-50 p-3 text-sm dark:bg-gray-900">
           <div className="flex items-center gap-2">
@@ -90,9 +90,8 @@ export default function Sidebar() {
 
                 <div className="grid grid-cols-5 gap-2">
                   {questions.map((q) => {
-                    const { isAnswered, isMarked, isCurrent } = getQuestionStatus(
-                      q.number
-                    )
+                    const { isAnswered, isMarked, isCurrent } =
+                      getQuestionStatus(q.number)
 
                     return (
                       <button

@@ -79,4 +79,41 @@
     @apply text-danger-600 dark:text-danger-400;
     animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+
+  /* Custom scrollbar styles */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-track-gray-100::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 4px;
+  }
+
+  .scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+  }
+
+  .hover\:scrollbar-thumb-gray-400::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+
+  .dark .dark\:scrollbar-track-gray-900::-webkit-scrollbar-track {
+    background: #111827;
+    border-radius: 4px;
+  }
+
+  .dark .dark\:scrollbar-thumb-gray-600::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+  }
+
+  .dark .dark\:hover\:scrollbar-thumb-gray-500::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
 }

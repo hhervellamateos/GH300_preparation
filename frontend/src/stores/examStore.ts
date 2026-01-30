@@ -45,7 +45,9 @@ export const useExamStore = create<ExamStore>((set, get) => ({
         import('@/data/test2.json'),
       ])
 
-      set({ tests: [test1Response.default as Test, test2Response.default as Test] })
+      set({
+        tests: [test1Response.default as Test, test2Response.default as Test],
+      })
     } catch (error) {
       console.error('Error loading tests:', error)
     }
