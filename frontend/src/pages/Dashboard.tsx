@@ -49,10 +49,17 @@ export default function Dashboard() {
   // Calculate global statistics
   const totalAttempts = attempts.length
   const passedAttempts = attempts.filter((a) => a.passed).length
-  const passRate = totalAttempts > 0 ? Math.round((passedAttempts / totalAttempts) * 100) : 0
-  const avgGlobalScore = totalAttempts > 0 
-    ? Math.round(attempts.reduce((acc, a) => acc + (a.score / a.totalQuestions) * 100, 0) / totalAttempts)
-    : 0
+  const passRate =
+    totalAttempts > 0 ? Math.round((passedAttempts / totalAttempts) * 100) : 0
+  const avgGlobalScore =
+    totalAttempts > 0
+      ? Math.round(
+          attempts.reduce(
+            (acc, a) => acc + (a.score / a.totalQuestions) * 100,
+            0
+          ) / totalAttempts
+        )
+      : 0
 
   if (tests.length === 0) {
     return (
@@ -64,7 +71,9 @@ export default function Dashboard() {
     )
   }
 
-  const selectedTestData = selectedTest ? tests.find(t => t.id === selectedTest) : null
+  const selectedTestData = selectedTest
+    ? tests.find((t) => t.id === selectedTest)
+    : null
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
@@ -130,12 +139,19 @@ export default function Dashboard() {
                         <div className="flex-1">
                           <h3 className="font-semibold">{test.title}</h3>
                           <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                            {test.questions.filter((q) => !q.disabled).length} questions
+                            {test.questions.filter((q) => !q.disabled).length}{' '}
+                            questions
                           </p>
                           {totalAttempts > 0 && (
                             <div className="mt-2 flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
                               <Award className="h-3 w-3" />
-                              <span>Best: {bestScore}/{test.questions.filter((q) => !q.disabled).length}</span>
+                              <span>
+                                Best: {bestScore}/
+                                {
+                                  test.questions.filter((q) => !q.disabled)
+                                    .length
+                                }
+                              </span>
                             </div>
                           )}
                         </div>
@@ -156,7 +172,7 @@ export default function Dashboard() {
               /* Global Statistics View */
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">Overview</h2>
+                  <h2 className="mb-2 text-2xl font-bold">Overview</h2>
                   <p className="text-gray-600 dark:text-gray-400">
                     Your overall performance across all tests
                   </p>
@@ -222,7 +238,9 @@ export default function Dashboard() {
                           <p className="text-sm text-gray-600 dark:text-gray-400">
                             Avg Score
                           </p>
-                          <p className="text-2xl font-bold">{avgGlobalScore}%</p>
+                          <p className="text-2xl font-bold">
+                            {avgGlobalScore}%
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -233,7 +251,9 @@ export default function Dashboard() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Test Performance</CardTitle>
-                    <CardDescription>Detailed statistics for each test</CardDescription>
+                    <CardDescription>
+                      Detailed statistics for each test
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     {tests.map((test) => {
@@ -241,31 +261,40 @@ export default function Dashboard() {
                       const testBest = getBestScore(test.id)
                       const testAvg = getAverageScore(test.id)
                       const testAttemptsList = getAttemptsByTest(test.id)
-                      const testPassed = testAttemptsList.filter((a) => a.passed).length
-                      const testPassRate = testAttempts > 0 
-                        ? Math.round((testPassed / testAttempts) * 100)
-                        : 0
+                      const testPassed = testAttemptsList.filter(
+                        (a) => a.passed
+                      ).length
+                      const testPassRate =
+                        testAttempts > 0
+                          ? Math.round((testPassed / testAttempts) * 100)
+                          : 0
 
                       return (
                         <div
                           key={test.id}
                           className="rounded-lg border border-gray-200 p-4 dark:border-gray-700"
                         >
-                          <h4 className="font-semibold mb-3">{test.title}</h4>
+                          <h4 className="mb-3 font-semibold">{test.title}</h4>
                           {testAttempts > 0 ? (
                             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                               <div>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
                                   Attempts
                                 </p>
-                                <p className="text-xl font-bold">{testAttempts}</p>
+                                <p className="text-xl font-bold">
+                                  {testAttempts}
+                                </p>
                               </div>
                               <div>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
                                   Best Score
                                 </p>
                                 <p className="text-xl font-bold text-green-600">
-                                  {testBest}/{test.questions.filter((q) => !q.disabled).length}
+                                  {testBest}/
+                                  {
+                                    test.questions.filter((q) => !q.disabled)
+                                      .length
+                                  }
                                 </p>
                               </div>
                               <div>
@@ -273,14 +302,20 @@ export default function Dashboard() {
                                   Average
                                 </p>
                                 <p className="text-xl font-bold">
-                                  {testAvg}/{test.questions.filter((q) => !q.disabled).length}
+                                  {testAvg}/
+                                  {
+                                    test.questions.filter((q) => !q.disabled)
+                                      .length
+                                  }
                                 </p>
                               </div>
                               <div>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
                                   Pass Rate
                                 </p>
-                                <p className="text-xl font-bold">{testPassRate}%</p>
+                                <p className="text-xl font-bold">
+                                  {testPassRate}%
+                                </p>
                               </div>
                             </div>
                           ) : (
@@ -307,7 +342,11 @@ export default function Dashboard() {
                             {selectedTestData.title}
                           </CardTitle>
                           <CardDescription className="mt-2">
-                            {selectedTestData.questions.filter((q) => !q.disabled).length}{' '}
+                            {
+                              selectedTestData.questions.filter(
+                                (q) => !q.disabled
+                              ).length
+                            }{' '}
                             Questions • {selectedTestData.timeLimit} Minutes
                           </CardDescription>
                         </div>
@@ -323,7 +362,11 @@ export default function Dashboard() {
                           </p>
                           <p className="text-2xl font-bold">
                             {selectedTestData.passingScore}/
-                            {selectedTestData.questions.filter((q) => !q.disabled).length}
+                            {
+                              selectedTestData.questions.filter(
+                                (q) => !q.disabled
+                              ).length
+                            }
                           </p>
                           <p className="text-sm text-gray-600 dark:text-gray-400">
                             (72%)
@@ -350,7 +393,11 @@ export default function Dashboard() {
                               </p>
                               <p className="text-lg font-bold text-green-600">
                                 {getBestScore(selectedTestData.id)}/
-                                {selectedTestData.questions.filter((q) => !q.disabled).length}
+                                {
+                                  selectedTestData.questions.filter(
+                                    (q) => !q.disabled
+                                  ).length
+                                }
                               </p>
                             </div>
                             <div>
@@ -359,7 +406,11 @@ export default function Dashboard() {
                               </p>
                               <p className="text-lg font-bold">
                                 {getAverageScore(selectedTestData.id)}/
-                                {selectedTestData.questions.filter((q) => !q.disabled).length}
+                                {
+                                  selectedTestData.questions.filter(
+                                    (q) => !q.disabled
+                                  ).length
+                                }
                               </p>
                             </div>
                             <div>
@@ -373,16 +424,21 @@ export default function Dashboard() {
                           </div>
 
                           {(() => {
-                            const lastAttempt = getAttemptsByTest(selectedTestData.id)[0]
+                            const lastAttempt = getAttemptsByTest(
+                              selectedTestData.id
+                            )[0]
                             return lastAttempt ? (
                               <div className="mt-3 rounded border-l-4 border-primary bg-blue-50 p-3 dark:bg-blue-900/20">
                                 <div className="flex items-center gap-2">
                                   <Clock className="h-4 w-4" />
                                   <span className="text-sm">
                                     Last attempt:{' '}
-                                    {formatDistanceToNow(lastAttempt.completedAt, {
-                                      addSuffix: true,
-                                    })}
+                                    {formatDistanceToNow(
+                                      lastAttempt.completedAt,
+                                      {
+                                        addSuffix: true,
+                                      }
+                                    )}
                                   </span>
                                 </div>
                                 <div className="mt-1 flex items-center gap-2">
@@ -409,7 +465,9 @@ export default function Dashboard() {
                   <Card>
                     <CardHeader>
                       <CardTitle>Select Mode</CardTitle>
-                      <CardDescription>Choose how you want to practice</CardDescription>
+                      <CardDescription>
+                        Choose how you want to practice
+                      </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="grid gap-4 md:grid-cols-3">
@@ -453,7 +511,9 @@ export default function Dashboard() {
                           disabled
                         >
                           <BookOpen className="mb-2 h-8 w-8 text-gray-400" />
-                          <h3 className="font-semibold text-gray-400">Review Mode</h3>
+                          <h3 className="font-semibold text-gray-400">
+                            Review Mode
+                          </h3>
                           <p className="text-sm text-gray-400">
                             Coming soon: Review previously failed questions
                           </p>
@@ -461,7 +521,11 @@ export default function Dashboard() {
                       </div>
 
                       <div className="flex justify-end">
-                        <Button size="lg" onClick={handleStart} className="gap-2">
+                        <Button
+                          size="lg"
+                          onClick={handleStart}
+                          className="gap-2"
+                        >
                           <PlayCircle className="h-5 w-5" />
                           Start {selectedMode === 'exam' ? 'Exam' : 'Practice'}
                         </Button>
