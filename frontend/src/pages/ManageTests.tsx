@@ -137,7 +137,9 @@ function TestForm({
     documentationLink: '',
   })
 
-  const handleAddQuestion = () => {
+  const [editingQuestionIndex, setEditingQuestionIndex] = useState<number | null>(null)
+
+  const handleAddOrUpdateQuestion = () => {
     if (
       !currentQuestion.domain ||
       !currentQuestion.text ||
@@ -147,21 +149,41 @@ function TestForm({
       return
     }
 
-    const newQuestion = {
+    const questionData = {
       ...currentQuestion,
-      number: (formData.questions?.length || 0) + 1,
       options: currentQuestion.options.filter((opt) => opt.text.trim() !== ''),
     }
 
-    setFormData({
-      ...formData,
-      questions: [...(formData.questions || []), newQuestion],
-    })
+    if (editingQuestionIndex !== null) {
+      // Update existing question
+      const newQuestions = formData.questions?.map((q, i) =>
+        i === editingQuestionIndex ? questionData : q
+      )
+      setFormData({
+        ...formData,
+        questions: newQuestions,
+      })
+      setEditingQuestionIndex(null)
+    } else {
+      // Add new question
+      const newQuestion = {
+        ...questionData,
+        number: (formData.questions?.length || 0) + 1,
+      }
+      setFormData({
+        ...formData,
+        questions: [...(formData.questions || []), newQuestion],
+      })
+    }
 
     // Reset form
+    resetQuestionForm()
+  }
+
+  const resetQuestionForm = () => {
     setCurrentQuestion({
-      number: (formData.questions?.length || 0) + 2,
-      domain: currentQuestion.domain,
+      number: (formData.questions?.length || 0) + 1,
+      domain: formData.questions?.[0]?.domain || '',
       text: '',
       options: [
         { letter: 'A' as const, text: '' },
@@ -175,6 +197,45 @@ function TestForm({
       isMultiSelect: false,
       documentationLink: '',
     })
+    setEditingQuestionIndex(null)
+  }
+
+  const handleEditQuestion = (idx: number) => {
+    const question = formData.questions?.[idx]
+    if (!question) return
+
+    // Ensure all 5 options are present
+    const allOptions = [
+      { letter: 'A' as const, text: '' },
+      { letter: 'B' as const, text: '' },
+      { letter: 'C' as const, text: '' },
+      { letter: 'D' as const, text: '' },
+      { letter: 'E' as const, text: '' },
+    ]
+
+    question.options.forEach((opt) => {
+      const index = allOptions.findIndex((o) => o.letter === opt.letter)
+      if (index !== -1) {
+        allOptions[index] = opt
+      }
+    })
+
+    setCurrentQuestion({
+      number: question.number,
+      domain: question.domain,
+      text: question.text,
+      options: allOptions,
+      correctAnswers: question.correctAnswers,
+      explanation: question.explanation,
+      isMultiSelect: question.isMultiSelect,
+      documentationLink: question.documentationLink || '',
+    })
+    setEditingQuestionIndex(idx)
+
+    // Scroll to form
+    setTimeout(() => {
+      document.getElementById('question-form')?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
   }
 
   const handleSaveTest = () => {
@@ -266,7 +327,7 @@ function TestForm({
                 <div
                   key={idx}
                   className={`flex items-center justify-between rounded border p-3 ${
-                    q.disabled ? 'opacity-50 bg-gray-100 dark:bg-gray-800' : ''
+                    q.disabled ? 'bg-gray-100 opacity-50 dark:bg-gray-800' : ''
                   }`}
                 >
                   <div className="flex-1">
@@ -284,13 +345,26 @@ function TestForm({
                     <Button
                       variant="outline"
                       size="sm"
+                      onClick={() => handleEditQuestion(idx)}
+                      title="Edit question"
+                    >
+                      <Edit className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
                       onClick={() => {
-                        const newQuestions = formData.questions?.map((question, i) =>
-                          i === idx ? { ...question, disabled: !question.disabled } : question
+                        const newQuestions = formData.questions?.map(
+                          (question, i) =>
+                            i === idx
+                              ? { ...question, disabled: !question.disabled }
+                              : question
                         )
                         setFormData({ ...formData, questions: newQuestions })
                       }}
-                      title={q.disabled ? 'Enable question' : 'Disable question'}
+                      title={
+                        q.disabled ? 'Enable question' : 'Disable question'
+                      }
                     >
                       {q.disabled ? (
                         <EyeOff className="h-4 w-4" />
@@ -307,6 +381,7 @@ function TestForm({
                         )
                         setFormData({ ...formData, questions: newQuestions })
                       }}
+                      title="Delete question"
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
@@ -319,9 +394,21 @@ function TestForm({
       )}
 
       {/* Add Question Form */}
-      <Card>
+      <Card id="question-form">
         <CardHeader>
-          <CardTitle>Add Question</CardTitle>
+          <CardTitle>
+            {editingQuestionIndex !== null ? 'Edit Question' : 'Add Question'}
+            {editingQuestionIndex !== null && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={resetQuestionForm}
+                className="ml-2"
+              >
+                Cancel Edit
+              </Button>
+            )}
+          </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -465,9 +552,18 @@ function TestForm({
             </p>
           </div>
 
-          <Button onClick={handleAddQuestion} className="w-full">
-            <Plus className="mr-2 h-4 w-4" />
-            Add Question to Test
+          <Button onClick={handleAddOrUpdateQuestion} className="w-full">
+            {editingQuestionIndex !== null ? (
+              <>
+                <Edit className="mr-2 h-4 w-4" />
+                Update Question
+              </>
+            ) : (
+              <>
+                <Plus className="mr-2 h-4 w-4" />
+                Add Question to Test
+              </>
+            )}
           </Button>
         </CardContent>
       </Card>
