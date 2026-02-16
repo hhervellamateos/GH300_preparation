@@ -12,6 +12,7 @@ export type Question = {
   explanation: string
   isMultiSelect: boolean
   documentationLink?: string
+  disabled?: boolean
 }
 
 export type Test = {

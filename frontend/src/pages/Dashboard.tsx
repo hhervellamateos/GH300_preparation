@@ -109,7 +109,7 @@ export default function Dashboard() {
                     <div>
                       <CardTitle className="text-2xl">{test.title}</CardTitle>
                       <CardDescription className="mt-2">
-                        {test.questions.length} Questions • {test.timeLimit}{' '}
+                        {test.questions.filter((q) => !q.disabled).length} Questions • {test.timeLimit}{' '}
                         Minutes
                       </CardDescription>
                     </div>
@@ -126,7 +126,7 @@ export default function Dashboard() {
                         Passing Score
                       </p>
                       <p className="text-2xl font-bold">
-                        {test.passingScore}/{test.questions.length}
+                        {test.passingScore}/{test.questions.filter((q) => !q.disabled).length}
                       </p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         (72%)
@@ -152,7 +152,7 @@ export default function Dashboard() {
                             Best
                           </p>
                           <p className="text-lg font-bold text-success-600">
-                            {bestScore}/{test.questions.length}
+                            {bestScore}/{test.questions.filter((q) => !q.disabled).length}
                           </p>
                         </div>
                         <div>
@@ -160,7 +160,7 @@ export default function Dashboard() {
                             Average
                           </p>
                           <p className="text-lg font-bold">
-                            {avgScore}/{test.questions.length}
+                            {avgScore}/{test.questions.filter((q) => !q.disabled).length}
                           </p>
                         </div>
                         <div>

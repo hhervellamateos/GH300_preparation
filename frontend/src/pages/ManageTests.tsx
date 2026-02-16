@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useExamStore } from '@/stores/examStore'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Home, Plus, Edit, Trash2 } from 'lucide-react'
+import { Home, Plus, Edit, Trash2, Eye, EyeOff } from 'lucide-react'
 import type { Test } from '@/types'
 
 export default function ManageTests() {
@@ -178,15 +178,17 @@ function TestForm({
   }
 
   const handleSaveTest = () => {
-    if (!formData.title || !formData.questions || formData.questions.length === 0) {
+    if (
+      !formData.title ||
+      !formData.questions ||
+      formData.questions.length === 0
+    ) {
       alert('Please add at least one question and set a title')
       return
     }
 
     // Update domains based on questions
-    const domains = Array.from(
-      new Set(formData.questions.map((q) => q.domain))
-    )
+    const domains = Array.from(new Set(formData.questions.map((q) => q.domain)))
     const finalTest = { ...formData, domains } as Test
 
     console.log('Saving test:', finalTest)
@@ -224,7 +226,10 @@ function TestForm({
                 type="number"
                 value={formData.timeLimit}
                 onChange={(e) =>
-                  setFormData({ ...formData, timeLimit: Number(e.target.value) })
+                  setFormData({
+                    ...formData,
+                    timeLimit: Number(e.target.value),
+                  })
                 }
                 className="w-full rounded-lg border p-2 dark:bg-gray-800"
               />
@@ -260,30 +265,52 @@ function TestForm({
               {formData.questions.map((q, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-between rounded border p-3"
+                  className={`flex items-center justify-between rounded border p-3 ${
+                    q.disabled ? 'opacity-50 bg-gray-100 dark:bg-gray-800' : ''
+                  }`}
                 >
                   <div className="flex-1">
                     <p className="font-medium">
                       {q.number}. {q.text.substring(0, 100)}
                       {q.text.length > 100 ? '...' : ''}
+                      {q.disabled && ' (Disabled)'}
                     </p>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       {q.domain} • {q.correctAnswers.join(', ')} correct
                       {q.documentationLink && ' • Has documentation link'}
                     </p>
                   </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => {
-                      const newQuestions = formData.questions?.filter(
-                        (_, i) => i !== idx
-                      )
-                      setFormData({ ...formData, questions: newQuestions })
-                    }}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        const newQuestions = formData.questions?.map((question, i) =>
+                          i === idx ? { ...question, disabled: !question.disabled } : question
+                        )
+                        setFormData({ ...formData, questions: newQuestions })
+                      }}
+                      title={q.disabled ? 'Enable question' : 'Disable question'}
+                    >
+                      {q.disabled ? (
+                        <EyeOff className="h-4 w-4" />
+                      ) : (
+                        <Eye className="h-4 w-4" />
+                      )}
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        const newQuestions = formData.questions?.filter(
+                          (_, i) => i !== idx
+                        )
+                        setFormData({ ...formData, questions: newQuestions })
+                      }}
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -305,7 +332,10 @@ function TestForm({
               type="text"
               value={currentQuestion.domain}
               onChange={(e) =>
-                setCurrentQuestion({ ...currentQuestion, domain: e.target.value })
+                setCurrentQuestion({
+                  ...currentQuestion,
+                  domain: e.target.value,
+                })
               }
               className="w-full rounded-lg border p-2 dark:bg-gray-800"
               placeholder="e.g., Plan and design"
@@ -351,7 +381,9 @@ function TestForm({
                   <input
                     type={currentQuestion.isMultiSelect ? 'checkbox' : 'radio'}
                     name="correct-answer"
-                    checked={currentQuestion.correctAnswers.includes(opt.letter)}
+                    checked={currentQuestion.correctAnswers.includes(
+                      opt.letter
+                    )}
                     onChange={(e) => {
                       if (currentQuestion.isMultiSelect) {
                         setCurrentQuestion({
@@ -395,7 +427,9 @@ function TestForm({
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium">Explanation</label>
+            <label className="mb-2 block text-sm font-medium">
+              Explanation
+            </label>
             <textarea
               value={currentQuestion.explanation}
               onChange={(e) =>

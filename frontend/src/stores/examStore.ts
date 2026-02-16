@@ -305,7 +305,14 @@ export const useExamStore = create<ExamStore>((set, get) => ({
 
   getTest: (testId) => {
     const { tests } = get()
-    return tests.find((t) => t.id === testId) || null
+    const test = tests.find((t) => t.id === testId)
+    if (!test) return null
+    
+    // Filter out disabled questions
+    return {
+      ...test,
+      questions: test.questions.filter((q) => !q.disabled),
+    }
   },
 
   saveProgress: () => {
